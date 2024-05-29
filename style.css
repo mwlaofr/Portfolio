@@ -1,0 +1,156 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    
+}
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('path-to-your-fonts/segoeui.woff2') format('woff2'),
+         url('path-to-your-fonts/segoeui.woff') format('woff');
+
+}
+
+header{
+    padding: 10px 20px;
+    top: 0;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 60px;
+}
+nav{
+    margin-left: auto;
+    margin-right: 20px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin-right: 20px;
+}
+nav ul li{
+    padding: 0 10px
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    
+}
+
+nav ul li a:hover {
+    color: rgb(108, 99, 255);
+}
+
+main{
+    margin-top: 70px;
+    padding: 20px   ;
+    margin-left: 60px;
+    margin-right: 15px;
+}
+main section {
+    margin-bottom: 40px;
+}
+main section h2{
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 60px;
+}
+main section p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+#home h2 {
+    margin-bottom: 10px;
+}
+.contato-logo{
+    margin-top: 30px;
+}
+.git {
+    font-size: 45px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+.linke{
+    font-size: 45px;
+    color: #ffffff;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+.git:hover {
+    color: rgb(108, 99, 255);
+    transform: scale(1.1);
+}
+.linke:hover{
+    color: rgb(108, 99, 255);
+    transform: scale(1.1);
+}
+.insta {
+    font-size: 45px;
+    color: #ffffff;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+.insta:hover {
+    color: rgb(108, 99, 255);
+    transform: scale(1.1);
+}
+
+main section h1{
+    margin-top: 100px;
+    font-size: 36px;
+    font-weight: 700;
+}
+.conteudo{
+    display: flex;
+    justify-content: space-around;
+
+}
+.conteudo a{
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 180px;
+    height: 60px;
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.6);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    padding: 5px 10px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.conteudo a:hover{
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.9);
+    transform: scale(1.1);
+}
+main section h3{
+    margin-top: 80px;
+    font-size: 24px;
+    font-weight: 700;
+}
