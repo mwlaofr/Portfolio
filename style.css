@@ -1,11 +1,15 @@
 body{
     padding: 0;
     margin: 0;
-    background-color: #000;
+    background-color: #000000;
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #fff;
     
 }
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: 'Segoe UI';
     src: url('path-to-your-fonts/segoeui.woff2') format('woff2'),
@@ -87,13 +91,13 @@ main section p{
     margin-top: 30px;
 }
 .git {
-    font-size: 45px;
+    font-size: 40px;
     color: #ffffff;
     cursor: pointer;
     transition: color 0.3s, transform 0.3s;
 }
 .linke{
-    font-size: 45px;
+    font-size: 40px;
     color: #ffffff;
     margin-left: 30px;
     cursor: pointer;
@@ -108,7 +112,7 @@ main section p{
     transform: scale(1.1);
 }
 .insta {
-    font-size: 45px;
+    font-size: 40px;
     color: #ffffff;
     margin-left: 30px;
     cursor: pointer;
@@ -130,7 +134,7 @@ main section h1{
 
 }
 .conteudo a{
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -154,3 +158,176 @@ main section h3{
     font-size: 24px;
     font-weight: 700;
 }
+.cap{
+    font-size: 17px;
+    margin-left: 35px;
+    transition: color 0.3s, transform 0.3s;
+}
+.headAcad i.cap {
+    position: absolute;
+    top: 848px; /* Ajuste este valor conforme necessário */
+    left: 141px;
+    transform: translateX(-50%);
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.timelineEsquerda{
+    margin-left: 155px;
+}
+.timelineDireita{
+    margin-left: 625px;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #161616;
+}
+.balaoEsq:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: -10px;
+    margin-top: -110px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #131316;
+    border-radius: 50%;
+  }
+  .balaoDi:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -10px;
+    margin-top: -160px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #131316;
+    border-radius: 50%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+.balaoEsq{
+    width: 370px;
+    position: relative;
+    background-color: #131316;
+    border-radius: 5px;
+    box-shadow: rgb(39, 39, 42) 0px 3px 0px;
+    padding-bottom: 7px;
+    
+}
+.balaoEsq h4 {
+    font-size: 20px;
+    padding-top: 15px;
+    padding-left: 17px;
+    margin-bottom: 1px;
+}
+.balaoEsq span{
+    font-size: 14px;
+    color: rgb(161, 161, 170);
+    padding-left: 17px;
+}
+.balaoEsq p{
+    font-size: 16px;
+    padding-left: 17px;
+}
+.balaoDi{
+    width: 370px;
+    position: relative;
+    background-color: #131316;
+    border-radius: 5px;
+    box-shadow: rgb(39, 39, 42) 0px 3px 0px;
+    padding-bottom: 7px;
+    
+}
+.balaoDi h4 {
+    font-size: 20px;
+    padding-top: 15px;
+    padding-left: 17px;
+    margin-bottom: 1px;
+}
+.balaoDi span{
+    font-size: 14px;
+    color: rgb(161, 161, 170);
+    padding-left: 17px;
+}
+.balaoDi p{
+    font-size: 16px;
+    padding-left: 17px;
+}
+footer{
+    margin-top: 70px;
+    background-color: #000000;
+    text-align: center;
+
+}
+footer p{
+    color: #fff;
+    font-size: 14px;
+}
+.highlight{
+    color: rgb(108, 99, 255);
+    font-weight: 650;
+}
+#materia-conteudo li{
+    margin-bottom: 4px;
+    font-size: 17px;
+    font-weight: 600;
+}
+#materia-conteudo p{
+    font-weight: 600;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    text-align: justify;
+    
+}
+.fonte{
+    font-size: 14px;
+    color: rgb(161, 161, 170);
+}
+.arduino{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 35px;
+    height: auto;
+    max-width: 100%;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+.arduino:hover{
+    transform: scale(1.05);
+}
+.dolado{
+    max-width: 60%;
+    flex-grow: 1;   
+    text-align: justify;    
+}
+.ardContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+.semaforo{
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    
+
+}   
