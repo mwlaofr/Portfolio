@@ -40,13 +40,49 @@
         </section>
         <section id="materias">
             <h1>Matérias</h1>
-            <div class="conteudo">
-                <a href="Automacao.html" class="card"><h3>Automação</h3></a>
-                <a href="programacao.html" class="card"><h3>Linguagem de Programação</h3></a>
-                <a href="web.html" class="card"><h3>Desenvolvimento<br>Web</h3></a>
-                <a href="bancodados.html" class="card"><h3>Banco de Dados</h3></a>
-                <a href="ciencdados.html" class="card"><h3>Ciência de Dados</h3></a>
+            <div class="container">
+            <div class="arrow left-arrow">&#9664;</div>
+        <div class="conteudo">
+            <a href="Automacao.html" class="reff"><div class="card">
+                <h2>Automação<br> <br></h2>
+                <div class="image-container">
+                    <i class="fa-solid fa-gear gear" style="color: #ffffff;"></i>
             </div>
+                <p>Estudo dos princípios e aplicações da<br>automação industrial.</p></div></a>
+
+                <a href="programacao.html" class="reff"><div class="card">
+                    <h2>Linguagem de<br>Programação</h2>
+                    <div class="image-container">
+                        <i class="fa-solid fa-code gear"></i>
+                </div>
+                    <p>Introdução aos princípios e<br>fundamentos da programação com<br>foco em Java.</p></div></a>
+
+                <a href="web.html" class="reff"><div class="card">
+                    <h2>Desenvolvimento<br>Web</h2>
+                    <div class="image-container">
+                        <i class="fa-brands fa-html5 gear"></i>
+                </div>
+                    <p>Desenvolvemos projetos web<br>dinâmicos e responsivos com HTML,<br>CSS e JavaScript.</p></div></a>
+
+                <a href="bancodados.html" class="reff"><div class="card">
+                    <h2>Banco de Dados<br> <br></h2>
+                    <div class="image-container">
+                        <i class="fa-solid fa-database gear"></i>
+                </div>
+                    <p>Gerenciamos bancos de dados relacionais e criamos consultas complexas com SQL.</p></div></a>
+
+                <a href="ciencdados.html" class="reff"><div class="card">
+                    <h2>Ciência de Dados<br> <br></h2>
+                    <div class="image-container">
+                        <i class="fa-brands fa-python gear"></i>
+                </div>
+                    <p>Utilizamos Python e suas bibliotecas<br>para análise exploratória de dados,<br>visualização e modelagem estatística.</p></div></a>
+          </div>
+          <div class="arrow right-arrow">&#9654;</div>
+        </div>
+        </section>
+
+            
         </section>
         <div class="headAcad">
         <section id="academico">
@@ -83,5 +119,48 @@
         <p>Millena França © 2024 • Todos os direitos reservados</p>
     </footer>
 
+
+    <script> //coloquei alguns itens do script aqui pra carregar apenas depois da pag
+        const scrollContainer = document.querySelector('.conteudo');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        const cards = document.querySelectorAll('.conteudo .card');
+    
+        function cloneItems() {
+  const cards = document.querySelectorAll('.conteudo .card');
+  const cloneCount = 2; // número de clones que você deseja adicionar
+
+  for (let i = 0; i < cloneCount; i++) {
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      scrollContainer.appendChild(clone);
+    });
+  }
+}
+    
+        cloneItems(); // clona os cards
+    
+        leftArrow.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: -250,
+                behavior: 'smooth'
+            });
+    
+            if (scrollContainer.scrollLeft === 0) {
+                scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+            }
+        });
+    
+        rightArrow.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: 250,
+                behavior: 'smooth'
+            });
+    
+            if (scrollContainer.scrollLeft + scrollContainer.offsetWidth >= scrollContainer.scrollWidth) {
+                scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
+            }
+        });
+    </script>
 </body>
 </html>

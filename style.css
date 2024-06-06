@@ -120,43 +120,88 @@ main section p{
 .logoContato:hover {
     color: rgb(108, 99, 255);
     transform: scale(1.1);
+}  
+.container {
+    position: relative;
+    width: 100%;
+    margin: 40px auto;
+    overflow: hidden;
 }
-
 .conteudo{
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-    justify-content: center; 
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 80%; /* ajuste o tamanho do container */
     padding: 20px;
-    max-width: 1000px; 
-    margin: 0 auto; 
-
+    margin: 40px auto;
+    display: flex;
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+    overflow-y: hidden;
 }
-.card{
-    width: 250px; /* Define uma largura fixa para os cards */
-    height: 240px;
-    box-shadow: 0 0 10px rgba(108, 99, 255, 0.6);
-    border-radius: 8px;
-    text-decoration: none;
-    padding: 20px;
-    transition: box-shadow 0.3s, transform 0.3s;
-    background-color: #000000;
-    border: 1px solid  #535353;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
+.card {
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+    background-color: #1a1a1a; /* Preto */
+    color: #fff; /* Texto Branco */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
     align-items: center;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px;
+}
+.card:hover {
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra mais intensa ao passar o mouse */
+} 
+
+.card h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+  
+  .card p {
+    margin-top: 90px;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .image-container {
+    position: relative;
+  }
+  
+  .gear {
+    position: absolute;
+    left: 50%; /* ou right: 50%, dependendo da posição desejada */
+    transform: translateX(-50%); /* para centralizar horizontalmente */
+    margin: 0;
+    font-size: 50px;
+    z-index: 2;
+    bottom: -30px;
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
 }
 
-.card:hover{
-    box-shadow: 0 0 20px rgba(108, 99, 255, 0.9);
-    transform: scale(1.1);
-}  
-.card h3{
-    margin: 0;
-    font-size: 20px;
-    font-weight: 500;
+  .left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
 }
 
 .timeline {
@@ -251,3 +296,4 @@ footer p{
     color: #fff;
     font-size: 14px;
 }
+

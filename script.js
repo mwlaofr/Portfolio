@@ -17,3 +17,4 @@ document.getElementById('toggle-code').addEventListener('click', function() {
         this.textContent = 'Mostrar Código Completo';
     }
 });
+
