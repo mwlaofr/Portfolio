@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automação</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prog.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-javascript.min.js"></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Millena França</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#materias">Matérias</a></li>
+                    <li><a href="index.html#academico">Acadêmico</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="materia-conteudo">
+            <h2>Introdução</h2>
+            <p>Na disciplina de Linguagem de Programação, focamos no aprendizado da linguagem Java, abordando diversos conceitos e estruturas fundamentais para a programação. Aprendemos sobre variáveis, operadores, estruturas de decisão e repetição, matrizes, vetores, funções e introdução a Programação Orientada a Objeto.</p>
+            <h3>Variáveis</h3>
+            <div class="variaveis">
+            <div class="texto"><p>Variável é o nome utilizado para definir um ou mais valores que são manipulados pelos programas durante a sua operação. O termo “variável” é utilizado por ser um tipo de conteúdo que pode apresentar diferentes valores enquanto o sistema está em execução.</p>
+        </div>
+        <div class="codigo">
+            <pre><code class="language-javascript">
+                int idade = 17;
+                double altura = 1.65;
+                char genero = 'F';
+                String nome = "Millena";
+                        </code></pre>
+                    </div>
+                </div>
+
+                <h3>Operadores</h3>
+            <div class="operadores">
+            <div class="texto"><p>Os operadores são símbolos que instruem o compilador ou o interpretador a realizar operações matemáticas, lógicas ou de manipulação de dados. Eles são fundamentais na programação, pois permitem a execução de cálculos, a comparação de valores e a tomada de decisões.</p>
+        </div>
+        <div class="tipos1">
+        <div class="codigo">
+            <h3>Aritméticos</h3>
+            <p>Os operadores aritméticos são utilizados para realizar operações matemáticas em programas.</p>
+            <pre><code class="language-javascript">
+                int soma = 10 + 5;
+                int subtracao = 10 - 5;
+                int multiplicacao = 10 * 5;
+                int divisao = 10 / 5;
+                int resto = 10 % 3;
+                        </code></pre>
+                    </div>
+                    
+         <div class="codigo">
+             <h3>Lógicos</h3>
+             <p>Os operadores lógicos são usados para executar operações lógicas em programas, permitindo a combinação e a manipulação de expressões booleanas para tomadas de decisão complexas.</p>
+             <pre><code class="language-javascript">
+                (n1 && n2) // 'E' lógico
+                (n1 || n2) // 'OU' lógico
+                (n1 ! n2) // inverte
+                         </code></pre>
+                     </div>
+                  </div>
+
+        <div class="tipos2">
+           <div class="codigo">
+               <h3>Comparação</h3>
+               <p>Os operadores de comparação são utilizados para comparar valores em programas.</p>
+               <pre><code class="language-javascript">
+              (n1 < n2) // menor
+              (n1 > n2) // maior
+              (n1 <= n2) // menor igual
+              (n1 >= n2)  // maior igual
+              (n1 == n2)  // igual
+              (n1 != n2)  // diferente
+                           </code></pre>
+                       </div>
+                       
+         <div class="codigo">
+             <h3>Atribuição</h3>
+             <p>Os operadores de atribuição são utilizados para atribuir valores a variáveis.</p>
+             <pre><code class="language-javascript">
+      int resultado = 5;    // resultado é 5
+      resultado += 3;       // resultado é 8
+      resultado -= 3;       // resultado é 5
+      resultado *= 3;       // resultado é 15
+      resultado /= 3;       // resultado é 5
+      resultado %= 3;       // resultado é 2
+                         </code></pre>
+                     </div>
+                  </div>
+            </div>
+            <button onclick="window.location.href='https://github.com/mwlaofr/Exercicios/tree/main/Lista1'" class="lista1">Exercícios</button>
+
+            <h3>Estrutura de Decisão</h3>
+            <h4 class="subtitulo">1. If e Else</h4>
+            <div class="ifElse">
+            <div class="texto"><p>Utilizada para tomar decisões com base em condições. O bloco de código dentro do “if” é executado somente se a condição for verdadeira, caso contrário, o bloco “else” (caso haja um) é executado.</p>
+        </div>
+        <div class="codmeio">
+        <div class="codigoMeio">
+            <pre><code class="language-javascript">
+    public class Main {
+        public static void main(String[] args) {
+            double n1;
+            Scanner in = new Scanner(System.in);
+            System.out.println("Digite um numero real:");
+            n1 = in.nextDouble();
+            if (n1 >= 0){ //se n1 for maior ou igual a 0, roda o bloco de código.
+                double raiz = Math.sqrt(n1);
+    
+                System.out.println("A raiz quadrada de " + n1 + " é: " + raiz);
+            }
+            else { //se não, executa esse bloco de código.
+                System.out.println("Valor inválido");
+            }
+        }
+    }
+                        </code></pre>
+                    </div>
+                    </div>
+
+                    <h4 class="subtitulo">2. Switch</h4>
+            <div class="switch">
+            <div class="texto"><p>Utilizada para selecionar um bloco de código a ser executado dentre várias opções, com base no valor de uma expressão. É útil quando há várias condições que dependem do valor de uma única variável.</p>
+        </div>
+        <div class="codmeio">
+        <div class="codigoMeio">
+            <pre><code class="language-javascript">
+   public class Main {
+       public static void main(String[] args) {
+           int dia;
+           Scanner in = new Scanner(System.in);
+           System.out.println("Digite um número de 1 a 7");
+           dia = in.nextInt();
+   
+           String diaSemana= "";
+           switch (dia) {
+               case 1:
+                   diaSemana = "domingo";
+                   break;
+               case 2:
+                   diaSemana = "segunda-feira";
+                   break;
+               case 3:
+                   diaSemana = "terça-feira";
+                   break;
+               case 4:
+                   diaSemana = "quarta-feira";
+                   break;
+               case 5:
+                   diaSemana = "quinta-feira";
+                   break;
+               case 6:
+                   diaSemana = "sexta-feira";
+                   break;
+               case 7:
+                   diaSemana = "sabado";
+                   break;
+               default:
+                   diaSemana = "Número inválido";
+                   break;
+           }
+   
+           System.out.println("O dia da semana correspondente ao número " + dia + " é " + diaSemana);
+       }
+   }
+                        </code></pre>
+                    </div>
+                    </div>
+                </div>
+        </section>
+        
+
+        
+    </main>
