@@ -7,15 +7,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-document.getElementById('toggle-code').addEventListener('click', function() {
-    var codigo = document.getElementById('codigo-completo');
-    if (codigo.style.display === 'none') {
-        codigo.style.display = 'block';
-        this.textContent = 'Ocultar Código Completo';
-    } else {
-        codigo.style.display = 'none';
-        this.textContent = 'Mostrar Código Completo';
+
+function confirmacaoEmail(){
+    var email = document.getElementById('email').value;
+    if(email !== ''){
+        alert("Email enviado com sucesso!");
+    } else{
+        alert("Por favor, insira um email válido")
     }
+    
+}
+
+document.getElementById('cor').addEventListener('input', function() {
+    var corSelecionada = this.value;
+    console.log('Cor selecionada: ' + corSelecionada);
 });
+
+
 
 

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automação</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="aut.css">
+    <link rel="stylesheet" href="web.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -21,3 +22,90 @@
         </nav>
     </header>
     <main>
+        <section id="materia-conteudo">
+            <h2>Desenvolvimento Web</h2>
+            <p>Na disciplina de Desenvolvimento Web, exploramos a criação de páginas e aplicações web utilizando tecnologias como HTML, CSS e JavaScript. A seguir, estão descritos os principais conceitos abordados, com ênfase em HTML5 e o Modelo de Objetos do Documento (DOM).</p>
+            <h3>HTML5</h3>
+            <div class="html5">
+            <div class="texto"><p>HTML5 é a quinta e mais recente versão do HyperText Markup Language (HTML), a linguagem padrão para criar páginas web. Ele introduz novas funcionalidades que facilitam o desenvolvimento de websites modernos e interativos.</p></div>
+                <img src="html5.png" alt="html5" class="html5">
+    </div>
+    <a>Novas Tags Semânticas</a>
+    <ul>
+        <li><g>Header:</g> Define o cabeçalho de uma seção ou página.</li>
+        <li><g>Nav:</g> Define uma seção de navegação.</li>
+        <li><g>Section:</g> Define uma seção genérica em um documento.</li>
+        <li><g>Article:</g> Define um conteúdo independente.</li>
+        <li><g>Aside:</g> Define um conteúdo relacionado ao conteúdo principal.</li>
+        <li><g>Footer:</g> Define o rodapé de uma seção ou página.</li>
+    </ul>
+    <h3>Formulários Aprimorados</h3>
+    <p>HTML5 também traz melhorias significativas nos formulários:</p>
+    <ul>
+        <li>Novos tipos de input, como email, tel, url, number, date, etc.</li>
+        <li>Atributos como placeholder, required, pattern, entre outros, para validação e usabilidade.</li>
+    </ul>
+    <p>Exemplos:</p>
+    <div class="ex">
+        <div class="formularioEmail">
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            <button id="botaoEnviar" onclick="confirmacaoEmail()">Enviar</button>
+        </div>
+
+        <div class="escolheCor">
+            <label for="cor">Escolha uma cor:</label>
+            <input type="color" id="cor" name="cor">
+        </div>
+    </div>
+    <script>
+        // Função para ser chamada quando a cor é alterada
+        function alterarCorBotao() {
+            // Seleciona o botão de enviar
+            const botaoEnviar = document.getElementById('botaoEnviar');
+            // Obtém a cor escolhida
+            const corEscolhida = document.getElementById('cor').value;
+            // Aplica a cor ao botão
+            botaoEnviar.style.backgroundColor = corEscolhida;
+        }
+        
+        // Adiciona um ouvinte de evento para a mudança de cor
+        document.getElementById('cor').addEventListener('change', alterarCorBotao);
+        </script>
+
+
+    <h3>DOM (Document Object Model)</h3>
+    <p>O Modelo de Objetos do Documento (DOM) é uma interface de programação para documentos HTML e XML. Ele representa a estrutura de um documento como uma árvore de nós, onde cada nó é um objeto representando uma parte do documento, como elementos, atributos e texto.</p>
+    <h3>Interação com o DOM usando JavaScript</h3>
+    <a>Acessar Elementos</a>
+    <ul>
+        <li><g>getElementById:</g> Seleciona um elemento pelo seu ID.</li>
+        <li><g>getElementsByClassName:</g> Seleciona elementos pela sua classe.</li>
+        <li><g>getElementsByTagName:</g> Seleciona elementos pelo nome da tag.</li>
+        <li><g>querySelector e querySelectorAll:</g> Seleciona elementos usando seletores CSS.</li>
+    </ul><br><br>
+    <a>Modificar Conteúdo</a>
+    <ul>
+        <li><g>innerHTML:</g> Altera o HTML interno de um elemento.</li>
+        <li><g>textContent:</g> Altera o texto interno de um elemento.</li>
+        <li><g>setAttribute:</g> Altera atributos de um elemento.
+        </li>
+    </ul>
+    <h3>Projetos</h3>
+    <a>Calculadora</a>
+    <p>Utilizamos HTML para estruturar a calculadora, CSS para estilização e JavaScript para implementar a lógica das operações matemáticas.</p>
+    <div class="calc">
+    <iframe src="C:\!projetos\HTML\calculadora\index.html" width="600" height="580" frameborder="0"></iframe><br><br>
+    </div>
+    <a>Conceitos de HTML Aplicados:</a>
+    <ul>
+        <li><g>Tags de cabeçalho (head):</g>  Incluem metadados como o charset e o título da página.</li>
+        <li><g>Tags de texto (input):</g> Usada para o display da calculadora.</li>
+        <li><g>Tags de formulário:</g> Como (input) e (button), permitem a entrada de dados do usuário.</li>
+        <li><g>Tags auxiliares:</g> (div) é utilizada para organizar o layout.</li>
+        <li><g>Manipulação da árvore DOM:</g> onclick nos botões para chamar funções JavaScript que manipulam o display da calculadora.</li>
+    </ul>
+    
+    
+
+    </main>
