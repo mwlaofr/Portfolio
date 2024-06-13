@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="aut.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
-    <!-- Prism.js JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-javascript.min.js"></script>
 </head>
@@ -59,67 +58,66 @@
                 <div class="codigo">
                     <h4>Código do Projeto Semáforo</h4>
                     <pre><a>O semáforo deve conter  as seguintes funções:<br>Iniciar no amarelo piscante, por 3x.<br>depois que iniciou, ele vai ficar em repetição.<br>fazendo a seguinte ordem:<br><br>Verde (5s)<br>Amarelo (3s)<br>Vermelho (5s)<br><br>//Declaração das variáveis</a><br>int vermelho = 3;<br>int amarelo = 4;<br>int verde = 5;<br>int tempo_intermitente = 1000;<br><br>void setup(){<br>    <a>//Determina que os pinos 3,4,5 serão saídas.</a><br>    pinMode(vermelho, OUTPUT);<br>    pinMode(amarelo, OUTPUT);<br>    pinMode(verde, OUTPUT);<br><br>    controlaCor(amarelo, 1000, false);<br>    controlaCor(amarelo, 1000, false);<br>    controlaCor(amarelo, 1000, false);<br><br>}<br><br>void loop(){<br>      <a>//Chamando a função para controlar as cores.</a><br><br>    controlaCor(verde, 5000, true);<br>    controlaCor(amarelo, 3000, true);<br>    controlaCor(vermelho, 5000, true);<br>}<br><br>int controlaCor (int cor, int tempo, bool noloop) {<br>    digitalWrite(cor, 1);<br>    delay(tempo);<br>    digitalWrite(cor, 0);<br>  <a>//se noloop for true, retorna 1 imediatamente</a><br><br>      if(noloop == false){<br>        delay(tempo);<br>        return 0;<br>            <a>//se noloop for falso, espera (tempo) para retornar</a><br>    }<br>    else{<br>        return 1;<br>    }<br>}<br></pre>
-                  </div>
                 </div>
+            </div>
 
-                <h3>Controle de Iluminação de LED - Potenciômetro</h3>
-                <p>Desenvolvemos um sistema de controle de iluminação de um LED, este controle é feito por um potenciômetro, onde seu valor define o tempo de respiração crescente e decrescente.</p>
-                <p class="subtitulo">Componentes Utilizados:</p>
-                <ul>
-                    <li>Placa Arduino UNO</li>
-                    <li>Protoboard</li>
-                    <li>Led</li>
-                    <li>Potenciômetro</li>
-                    <li>Resistor 220 Ohms</li>
-                    <li>Multímetro - Tensão (opcional)</li>
-                </ul>
-                <div class="proj">
-                    <img src="controleLed.png" alt="controleLed" class="controleLed">
-                    <div class="codigo">
-                        <h4>Codigo do Projeto Controle de LEDs</h4>
-                        <pre><a>//Declaração das variáveis</a><br>int led = 3;<br>int pot = A0;<br><br>void setup(){<br>  pinMode(led, OUTPUT); <a>//Determinar que o led é uma saída</a><br><br>  Serial.begin(9600); <a>//Inicializa a comunicação serial</a><br>}<br><br>void loop(){<br>int potValor = analogRead(pot);<br><a>//Armazena o valor do potenciômetro</a><br>int tempoRespiracao = map(potValor, 0, 1023, 0, 4000);<br><a>//A função map converte um valor na entrada analógico para uma faixa de saída<br>Sintaxe map(valor, in_min, in_max, out_min, out_max)<br>O valor no map é valor definido pelo potenciômetro, esse valor varia entre 0 a 1023<br>Este valor é convertido para um novo que varia entre 0 a 4000 (4seg)</a><br><br><a>//Se o potenciômetro estiver zerado, a luminosidade do led vai estar zerada também</a><br>if (potValor == 0) {<br>  digitalWrite(led, LOW);<br>  delay(100);<br>}<br><br>// Lógica da respiração, quanto maior o valor do pot mais demora a respiração  else {<br>      <a>//Crescente</a>    for (int i = 0; i <= 100; i++) {<br>      analogWrite(led, map(i, 0, 100, 0, 255)); //Ajusta a luminosidade conforme o valor do map<br>      <a>//Utiliza o 100 para ficar na medida de potência 100%</a><br>      delay(tempoRespiracao / 100); //Tempo de acordo com o potenciômetro<br>    }<br><br>      <a>// Decrescente, inverte a lógica do for<br></a>    for (int i = 100; i >= 0; i--) {<br>      analogWrite(led, map(i, 0, 100, 0, 255));<br>      delay(tempoRespiracao / 100);<br>    }<br>  }<br><br>  Serial.println(potValor); <a>//Visualizar o valor atual do potenciômetro</a><br>}</pre>
-                    </div>
+            <h3>Controle de Iluminação de LED - Potenciômetro</h3>
+            <p>Desenvolvemos um sistema de controle de iluminação de um LED, este controle é feito por um potenciômetro, onde seu valor define o tempo de respiração crescente e decrescente.</p>
+            <p class="subtitulo">Componentes Utilizados:</p>
+            <ul>
+                <li>Placa Arduino UNO</li>
+                <li>Protoboard</li>
+                <li>Led</li>
+                <li>Potenciômetro</li>
+                <li>Resistor 220 Ohms</li>
+                <li>Multímetro - Tensão (opcional)</li>
+            </ul>
+            <div class="proj">
+                <img src="controleLed.png" alt="controleLed" class="controleLed">
+                <div class="codigo">
+                    <h4>Codigo do Projeto Controle de LEDs</h4>
+                    <pre><a>//Declaração das variáveis</a><br>int led = 3;<br>int pot = A0;<br><br>void setup(){<br>  pinMode(led, OUTPUT); <a>//Determinar que o led é uma saída</a><br><br>  Serial.begin(9600); <a>//Inicializa a comunicação serial</a><br>}<br><br>void loop(){<br>int potValor = analogRead(pot);<br><a>//Armazena o valor do potenciômetro</a><br>int tempoRespiracao = map(potValor, 0, 1023, 0, 4000);<br><a>//A função map converte um valor na entrada analógico para uma faixa de saída<br>Sintaxe map(valor, in_min, in_max, out_min, out_max)<br>O valor no map é valor definido pelo potenciômetro, esse valor varia entre 0 a 1023<br>Este valor é convertido para um novo que varia entre 0 a 4000 (4seg)</a><br><br><a>//Se o potenciômetro estiver zerado, a luminosidade do led vai estar zerada também</a><br>if (potValor == 0) {<br>  digitalWrite(led, LOW);<br>  delay(100);<br>}<br><br>// Lógica da respiração, quanto maior o valor do pot mais demora a respiração  else {<br>      <a>//Crescente</a>    for (int i = 0; i <= 100; i++) {<br>      analogWrite(led, map(i, 0, 100, 0, 255)); //Ajusta a luminosidade conforme o valor do map<br>      <a>//Utiliza o 100 para ficar na medida de potência 100%</a><br>      delay(tempoRespiracao / 100); //Tempo de acordo com o potenciômetro<br>    }<br><br>      <a>// Decrescente, inverte a lógica do for<br></a>    for (int i = 100; i >= 0; i--) {<br>      analogWrite(led, map(i, 0, 100, 0, 255));<br>      delay(tempoRespiracao / 100);<br>    }<br>  }<br><br>  Serial.println(potValor); <a>//Visualizar o valor atual do potenciômetro</a><br>}</pre>
                 </div>
+            </div>
 
-                <h3>Contador - Display 7 segmentos</h3>
-                <p>Este sistema é um contador de 0 a 9, a partir de um botão junto de um display de 7 seguimentos, onde a cada clique do botão o display mostra um número, funcionando em ordem crescente, resetando no décimo clique.</p>
-                <p class="subtitulo">Componentes Utilizados:</p>
-                <ul>
-                    <li>Arduino UNO</li>
-                    <li>Protoboard</li>
-                    <li>Botão</li>
-                    <li>Resistores 1k Ohm e 100 Ohm</li>
-                </ul>
-                <div class="proj">
-                    <img src="contador.jpeg"" alt="contador" class="contador">
-                    <div class="codigo">
-                        <h4>Codigo do Projeto Contador - Display</h4>
-                        <pre><a>//Definir um array para facilitar a configuração de pinos futuramente</a><br>const int segmentPins[] = {3, 4, 5, 6, 7, 8, 9};<br><br><a>//Pino do botão</a><br>const int buttonPin = 2;<br><br>int buttonState = 0; <a>//Botão inicializa no zero para que o display inicialize mostrando 0;</a><br>int lastButtonState = 0; <a>//último estado do botão</a><br>int counter = 0; <a>//Atribuido valor zero pois ainda não houve clique no botão</a><br><br>void setup() {<br>    <a>//Lógica para configurar os pinos como saída, percorrendo o array definido anteriormente</a><br>  for (int i = 0; i < 7; i++) {<br>    pinMode(segmentPins[i], OUTPUT);<br>  }<br>  pinMode(buttonPin, INPUT); <a>//Configura o bõtao como entrada</a><br>}<br><br>void loop() {<br>  <a>//O estado do botão vai sendo atualizado assim que é feito a leitura de troca de estado (clique)</a><br>  buttonState = digitalRead(buttonPin);<br>   <a>//Se o estado atual for LOW, significa que não houve clique</a><br>   <a>//Se o último estado for HIGH, significa que o botão ainda esta sendo pressionado</a><br>  if (buttonState == HIGH && lastButtonState == LOW) { <br>    counter++;<br><br>    if (counter > 9) { <a>//Resetar o contador quando apertado 10 vezes</a><br>      counter = 0;<br>    }<br>  }<br><br>  lastButtonState = buttonState; <a>//Atualiza o estado anterior do botão</a><br><br>  displayNumber(counter);<a>//Mostra o número</a><br>  delay(50);<br>}<br><a>//Cria a "tabela", para o sistema saber quais segmentos ligar</a><br>void displayNumber(int num) {<br>    <a>//A	B  C  D  E  F  G</a><br>  const int segments[10][7] = { <br>    {1, 1, 1, 1, 1, 1, 0}, // 0<br>    {0, 1, 1, 0, 0, 0, 0}, // 1<br>    {1, 1, 0, 1, 1, 0, 1}, // 2<br>    {1, 1, 1, 1, 0, 0, 1}, // 3<br>    {0, 1, 1, 0, 0, 1, 1}, // 4<br>    {1, 0, 1, 1, 0, 1, 1}, // 5<br>    {1, 0, 1, 1, 1, 1, 1}, // 6<br>    {1, 1, 1, 0, 0, 0, 0}, // 7<br>    {1, 1, 1, 1, 1, 1, 1}, // 8<br>    {1, 1, 1, 1, 0, 1, 1}  // 9<br>  };<br><br>  for (int i = 0; i < 7; i++) {<br>    digitalWrite(segmentPins[i], LOW);<a>//Inicia com tudo desligado</a><br>  }<br>  for (int i = 0; i < 7; i++) {<br>    digitalWrite(segmentPins[i], segments[num][i]); <a>//Liga os segmentos de acordo com o número</a><br>  }<br>}</pre>
-                    </div>
+            <h3>Contador - Display 7 segmentos</h3>
+            <p>Este sistema é um contador de 0 a 9, a partir de um botão junto de um display de 7 seguimentos, onde a cada clique do botão o display mostra um número, funcionando em ordem crescente, resetando no décimo clique.</p>
+            <p class="subtitulo">Componentes Utilizados:</p>
+            <ul>
+                <li>Arduino UNO</li>
+                <li>Protoboard</li>
+                <li>Botão</li>
+                <li>Resistores 1k Ohm e 100 Ohm</li>
+            </ul>
+            <div class="proj">
+                <img src="contador.jpeg"" alt="contador" class="contador">
+                <div class="codigo">
+                    <h4>Codigo do Projeto Contador - Display</h4>
+                    <pre><a>//Definir um array para facilitar a configuração de pinos futuramente</a><br>const int segmentPins[] = {3, 4, 5, 6, 7, 8, 9};<br><br><a>//Pino do botão</a><br>const int buttonPin = 2;<br><br>int buttonState = 0; <a>//Botão inicializa no zero para que o display inicialize mostrando 0;</a><br>int lastButtonState = 0; <a>//último estado do botão</a><br>int counter = 0; <a>//Atribuido valor zero pois ainda não houve clique no botão</a><br><br>void setup() {<br>    <a>//Lógica para configurar os pinos como saída, percorrendo o array definido anteriormente</a><br>  for (int i = 0; i < 7; i++) {<br>    pinMode(segmentPins[i], OUTPUT);<br>  }<br>  pinMode(buttonPin, INPUT); <a>//Configura o bõtao como entrada</a><br>}<br><br>void loop() {<br>  <a>//O estado do botão vai sendo atualizado assim que é feito a leitura de troca de estado (clique)</a><br>  buttonState = digitalRead(buttonPin);<br>   <a>//Se o estado atual for LOW, significa que não houve clique</a><br>   <a>//Se o último estado for HIGH, significa que o botão ainda esta sendo pressionado</a><br>  if (buttonState == HIGH && lastButtonState == LOW) { <br>    counter++;<br><br>    if (counter > 9) { <a>//Resetar o contador quando apertado 10 vezes</a><br>      counter = 0;<br>    }<br>  }<br><br>  lastButtonState = buttonState; <a>//Atualiza o estado anterior do botão</a><br><br>  displayNumber(counter);<a>//Mostra o número</a><br>  delay(50);<br>}<br><a>//Cria a "tabela", para o sistema saber quais segmentos ligar</a><br>void displayNumber(int num) {<br>    <a>//A	B  C  D  E  F  G</a><br>  const int segments[10][7] = { <br>    {1, 1, 1, 1, 1, 1, 0}, // 0<br>    {0, 1, 1, 0, 0, 0, 0}, // 1<br>    {1, 1, 0, 1, 1, 0, 1}, // 2<br>    {1, 1, 1, 1, 0, 0, 1}, // 3<br>    {0, 1, 1, 0, 0, 1, 1}, // 4<br>    {1, 0, 1, 1, 0, 1, 1}, // 5<br>    {1, 0, 1, 1, 1, 1, 1}, // 6<br>    {1, 1, 1, 0, 0, 0, 0}, // 7<br>    {1, 1, 1, 1, 1, 1, 1}, // 8<br>    {1, 1, 1, 1, 0, 1, 1}  // 9<br>  };<br><br>  for (int i = 0; i < 7; i++) {<br>    digitalWrite(segmentPins[i], LOW);<a>//Inicia com tudo desligado</a><br>  }<br>  for (int i = 0; i < 7; i++) {<br>    digitalWrite(segmentPins[i], segments[num][i]); <a>//Liga os segmentos de acordo com o número</a><br>  }<br>}</pre>
                 </div>
+            </div>
                 
-                <h3>ESP32</h3>
-                <div class="ardEsp">
-                    <p class="dolado">O ESP32 é um microcontrolador de 32 bits capaz de conectar-se a redes Wi-Fi e Bluetooth. É bastante utilizado em projetos de IoT, eletrônicos e automação, devido sus opções de conexão, seu poder de processamento e um baixo custo. Com o ESP32, podemos controlar displays LCDs, sensores, display 7 segmentos, e entre outros elementos.
-                        <span class="fonte"><br>Site utilizado para programação e visualização: Wokwi - (https://wokwi.com)</span></p>
-                        <img src="esp32.png" alt="esp32" class="esp32">
-                    </div>
-                </div>
+            <h3>ESP32</h3>
+            <div class="ardEsp">
+                <p class="dolado">O ESP32 é um microcontrolador de 32 bits capaz de conectar-se a redes Wi-Fi e Bluetooth. É bastante utilizado em projetos de IoT, eletrônicos e automação, devido sus opções de conexão, seu poder de processamento e um baixo custo. Com o ESP32, podemos controlar displays LCDs, sensores, display 7 segmentos, e entre outros elementos.
+                    <span class="fonte"><br>Site utilizado para programação e visualização: Wokwi - (https://wokwi.com)</span></p>
+                    <img src="esp32.png" alt="esp32" class="esp32">
+            </div>
 
-                    <h3>Display LCD - Escrever e mostrar mensagem</h3>
-                <p>Sistema desenvolvido para escrever mensagens e mostrar no display, utilizando a comunicação serial e LCD (Liquid Crystal Display).</p>
-                <p class="subtitulo">Componentes Utilizados:</p>
-                <ul>
-                    <li>ESP32</li>
-                    <li>LCD</li>
-                </ul>
-                <div class="proj">
+            <h3>Display LCD - Escrever e mostrar mensagem</h3>
+            <p>Sistema desenvolvido para escrever mensagens e mostrar no display, utilizando a comunicação serial e LCD (Liquid Crystal Display).</p>
+            <p class="subtitulo">Componentes Utilizados:</p>
+            <ul>
+                <li>ESP32</li>
+                <li>LCD</li>
+            </ul>
+            <div class="proj">
                     <img src="espSistema.png" alt="espSistema" class="espSistema">
                     <div class="codigo">
                         <h4>Codigo do Projeto Contador - Display</h4>
                         <pre><a>//Biblioteca do LCD</a><br>#include <LiquidCrystal_I2C.h><br><br>LiquidCrystal_I2C LCD = LiquidCrystal_I2C(0x27, 16, 2);<br><a>//LiquidCrystal_I2C é a classe, incluida na biblioteca; LCD - variável</a><br><a>//0x27 - endereço I2C do display; 16 - número de colunas; 2 - número de linhas</a><br><br>String mensagemAnterior = ""; <a>//Variável para armazenar a mensagem anterior</a><br><br>void setup() {<br>  Serial.begin(9600); <a>// Inicia a comunicação serial</a><br>  LCD.init(); <a>//Inicializa o LCD</a><br>  LCD.backlight(); <a>//Inicializa a luz de fundo para possibilitar a visão da informação no display</a><br><br>  LCD.setCursor(0, 0); <a>//Indica a posição que ele deve escrever a mensagem</a><br>  LCD.print("Hello World"); <a>//A mensagem a ser escrita apenas para testar o funcionamento</a><br>  delay(1000);<br><br>  LCD.clear(); <a>//Limpa as informações no display</a><br>  LCD.setCursor(0, 1); <a>//Indica a posição na segunda linha (começa no 0, por isso linha 1)</a><br>  LCD.print("Sistema Pronto"); <a>//Mensagem para dizer que o sistema esta funcionando corretamente</a><br>}<br><br>void loop() {<br>  if (Serial.available() > 0) { <a>//Verifica se há dados disponíveis na porta serial</a><br>    String novaMensagem = Serial.readString(); <a>// Lê a mensagem serial</a><br><br>    if (novaMensagem != mensagemAnterior) { <a>//Verifica se a mensagem é diferente da anterior</a><br>      LCD.clear(); <a>//Apaga a mensagem anterior no LCD</a><br>      escreve(0, 1, novaMensagem); <a>//Escreve a nova mensagem no LCD</a><br>      mensagemAnterior = novaMensagem; <a>//Atualiza a mensagem anterior</a><br>    }<br>  }<br>}<br><br><a>//Função para escrever a mensagem no LCD</a><br>void escreve(int col, int lin, String msg) {<br>  LCD.setCursor(col, lin); <a>//Valores passados no void loop</a><br>  LCD.print(msg); <a>//Mostra a mensagem no LCD</a><br>}<br></pre>
                     </div>
-                </div>
+            </div>
         </section>
     </main>
     <footer>

@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automação</title>
+    <title>Linguagem de Programação</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="prog.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
-    <!-- Prism.js JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-javascript.min.js"></script>
     
@@ -31,27 +30,25 @@
             <p>Na disciplina de Linguagem de Programação, focamos no aprendizado da linguagem Java, abordando diversos conceitos e estruturas fundamentais para a programação. Aprendemos sobre variáveis, operadores, estruturas de decisão e repetição, matrizes, vetores, funções e introdução a Programação Orientada a Objeto.</p>
             <h3>Variáveis</h3>
             <div class="variaveis">
-            <div class="texto"><p>Variável é o nome utilizado para definir um ou mais valores que são manipulados pelos programas durante a sua operação. O termo “variável” é utilizado por ser um tipo de conteúdo que pode apresentar diferentes valores enquanto o sistema está em execução.</p>
-        </div>
-        <div class="codigo">
-            <pre><code class="language-javascript">
+                <div class="texto"><p>Variável é o nome utilizado para definir um ou mais valores que são manipulados pelos programas durante a sua operação. O termo “variável” é utilizado por ser um tipo de conteúdo que pode apresentar diferentes valores enquanto o sistema está em execução.</p></div>
+                <div class="codigo">
+                    <pre><code class="language-javascript">
                 int idade = 17;
                 double altura = 1.65;
                 char genero = 'F';
                 String nome = "Millena";
-                        </code></pre>
-                    </div>
-                </div>
+                    </code></pre>
+                </div>   
+            </div>
 
-                <h3>Operadores</h3>
+            <h3>Operadores</h3>
             <div class="operadores">
-            <div class="texto"><p>Os operadores são símbolos que instruem o compilador ou o interpretador a realizar operações matemáticas, lógicas ou de manipulação de dados. Eles são fundamentais na programação, pois permitem a execução de cálculos, a comparação de valores e a tomada de decisões.</p>
-        </div>
-        <div class="tipos1">
-        <div class="codigo">
-            <h3>Aritméticos</h3>
-            <p>Os operadores aritméticos são utilizados para realizar operações matemáticas em programas.</p>
-            <pre><code class="language-javascript">
+                <div class="texto"><p>Os operadores são símbolos que instruem o compilador ou o interpretador a realizar operações matemáticas, lógicas ou de manipulação de dados. Eles são fundamentais na programação, pois permitem a execução de cálculos, a comparação de valores e a tomada de decisões.</p></div>
+                <div class="tipos1">
+                    <div class="codigo">
+                        <h3>Aritméticos</h3>
+                        <p>Os operadores aritméticos são utilizados para realizar operações matemáticas em programas.</p>
+                        <pre><code class="language-javascript">
             int soma = 10 + 5;
             int subtracao = 10 - 5;
             int multiplicacao = 10 * 5;
@@ -60,55 +57,55 @@
                         </code></pre>
                     </div>
                     
-         <div class="codigo">
-             <h3>Lógicos</h3>
-             <p>Os operadores lógicos são usados para executar operações lógicas em programas, permitindo a combinação e a manipulação de expressões booleanas para tomadas de decisão complexas.</p>
-             <pre><code class="language-javascript">
+                    <div class="codigo">
+                        <h3>Lógicos</h3>
+                        <p>Os operadores lógicos são usados para executar operações lógicas em programas, permitindo a combinação e a manipulação de expressões booleanas para tomadas de decisão complexas.</p>
+                        <pre><code class="language-javascript">
               (n1 && n2) // 'E' lógico
               (n1 || n2) // 'OU' lógico
               (n1 ! n2) // inverte
-                         </code></pre>
-                     </div>
-                  </div>
+                        </code></pre>
+                    </div>
+                </div>
 
-        <div class="tipos2">
-           <div class="codigo">
-               <h3>Comparação</h3>
-               <p>Os operadores de comparação são utilizados para comparar valores em programas.</p>
-               <pre><code class="language-javascript">
+                <div class="tipos2">
+                    <div class="codigo">
+                        <h3>Comparação</h3>
+                        <p>Os operadores de comparação são utilizados para comparar valores em programas.</p>
+                        <pre><code class="language-javascript">
               (n1 < n2) // menor
               (n1 > n2) // maior
               (n1 <= n2) // menor igual
               (n1 >= n2)  // maior igual
               (n1 == n2)  // igual
               (n1 != n2)  // diferente
-                           </code></pre>
-                       </div>
+                        </code></pre>
+                    </div>
                        
-         <div class="codigo">
-             <h3>Atribuição</h3>
-             <p>Os operadores de atribuição são utilizados para atribuir valores a variáveis.</p>
-             <pre><code class="language-javascript">
+                    <div class="codigo">
+                        <h3>Atribuição</h3>
+                        <p>Os operadores de atribuição são utilizados para atribuir valores a variáveis.</p>
+                        <pre><code class="language-javascript">
       int resultado = 5;    // resultado é 5
       resultado += 3;       // resultado é 8
       resultado -= 3;       // resultado é 5
       resultado *= 3;       // resultado é 15
       resultado /= 3;       // resultado é 5
       resultado %= 3;       // resultado é 2
-                         </code></pre>
-                     </div>
-                  </div>
+                        </code></pre>
+                    </div>
+                </div>
             </div>
+
             <button onclick="window.location.href='https://github.com/mwlaofr/Exercicios/tree/main/Lista1'" class="lista1">Exercícios</button>
 
             <h3>Estrutura de Decisão</h3>
             <h4 class="subtitulo">1. If e Else</h4>
             <div class="ifElse">
-            <div class="texto"><p>Utilizada para tomar decisões com base em condições. O bloco de código dentro do “if” é executado somente se a condição for verdadeira, caso contrário, o bloco “else” (caso haja um) é executado.</p>
-        </div>
-        <div class="codmeio">
-        <div class="codigoMeio">
-            <pre><code class="language-javascript">
+                <div class="texto"><p>Utilizada para tomar decisões com base em condições. O bloco de código dentro do “if” é executado somente se a condição for verdadeira, caso contrário, o bloco “else” (caso haja um) é executado.</p></div>
+            <div class="codmeio">
+                <div class="codigoMeio">
+                    <pre><code class="language-javascript">
     public class Main {
         public static void main(String[] args) {
             double n1;
@@ -125,18 +122,17 @@
             }
         }
     }
-                        </code></pre>
-                    </div>
+                    </code></pre>
+                </div>
                     <p><g>Explicação:</g> O usuário entrará com um número e, caso o mesmo seja um número real, o programa imprime sua raiz quadrada, entrando na condição IF. Caso o número digitado não seja real, ele segue para o else e imprime para o usuário que o valor digitado é inválido.</p>
-                    </div>
+            </div>
 
-                    <h4 class="subtitulo">2. Switch</h4>
+            <h4 class="subtitulo">2. Switch</h4>
             <div class="switch">
-            <div class="texto"><p>Utilizada para selecionar um bloco de código a ser executado dentre várias opções, com base no valor de uma expressão. É útil quando há várias condições que dependem do valor de uma única variável.</p>
-        </div>
-        <div class="codmeio">
-        <div class="codigoMeioScroll">
-            <pre><code class="language-javascript">
+                <div class="texto"><p>Utilizada para selecionar um bloco de código a ser executado dentre várias opções, com base no valor de uma expressão. É útil quando há várias condições que dependem do valor de uma única variável.</p></div>
+            <div class="codmeio">
+                <div class="codigoMeioScroll">
+                    <pre><code class="language-javascript">
    public class Main {
        public static void main(String[] args) {
            int dia;
@@ -175,47 +171,47 @@
            System.out.println("O dia da semana correspondente ao número " + dia + " é " + diaSemana);
        }
    }
-                        </code></pre>
-                    </div>
-                    </div>
-                    <p><g>Explicação:</g> O usuário digita um número de 1 a 7 e, através do switch, comparando o valor da variável “dia” com cada case, o programa imprime o dia da semana correspondente ao número digitado. O comando “break” é usado para sair do switch após executar o bloco de código correspondente. O “default” é executado caso nenhum dos cases corresponder ao valor digitado.</p>
+                    </code></pre>
                 </div>
-                <button onclick="window.location.href='https://github.com/mwlaofr/Exercicios/tree/main/Lista2'" class="lista1">Exercícios</button>
-                <h3 class="titulolo">Estrutura de Repetição</h3>
+            </div>
+            <p><g>Explicação:</g> O usuário digita um número de 1 a 7 e, através do switch, comparando o valor da variável “dia” com cada case, o programa imprime o dia da semana correspondente ao número digitado. O comando “break” é usado para sair do switch após executar o bloco de código correspondente. O “default” é executado caso nenhum dos cases corresponder ao valor digitado.</p></div>
+            <button onclick="window.location.href='https://github.com/mwlaofr/Exercicios/tree/main/Lista2'" class="lista1">Exercícios</button>
+                
+            <h3 class="titulolo">Estrutura de Repetição</h3>
             <div class="for">
                 <div class="tipos1">
                     <div class="codigo">
                         <h3>For</h3>
                         <p>Utilizado para repetir um bloco de código um número específico de vezes.</p>
-<pre><code class="language-javascript">
+                        <pre><code class="language-javascript">
     for (int i = 0; i < 10; i++) {
         System.out.println("Valor de i: " + i);
     }
-            </code></pre>
-            <p><g>Explicação:</g> O loop “for” inicializa a variável i em 0, depois verifica se seu valor é menor que 10, e incrementa i a cada repetição, imprimindo o valor de i a cada passo. O loop encerra quando o valor de i passar a ser maior que 10.</p>
-        </div>
+                        </code></pre>
+                        <p><g>Explicação:</g> O loop “for” inicializa a variável i em 0, depois verifica se seu valor é menor que 10, e incrementa i a cada repetição, imprimindo o valor de i a cada passo. O loop encerra quando o valor de i passar a ser maior que 10.</p>
+                    </div>
                                 
-<div class="codigo">
-    <h3>While</h3>
-    <p>A estrutura de repetição while permite a criação de um loop que executa um bloco de instruções repetidas vezes enquanto uma condição for verdadeira</p>
-    <pre><code class="language-javascript">
+                    <div class="codigo">
+                        <h3>While</h3>
+                        <p>A estrutura de repetição while permite a criação de um loop que executa um bloco de instruções repetidas vezes enquanto uma condição for verdadeira</p>
+                        <pre><code class="language-javascript">
     int i = 0;
     while (i < 10) {
         System.out.println("Valor de i: " + i);
         i++;
     }
-            </code></pre>
-            <p><g>Explicação:</g> O loop while continua executando  o bloco de código enquanto a condição “i < 10” for verdadeira, incrementando “i” a cada repetição.</p>
-            </div>
-         </div>
-         <button onclick="window.location.href='https://github.com/mwlaofr/ListasDeExercicios/tree/main/Lista3'" class="lista1">Exercícios</button>
+                        </code></pre>
+                        <p><g>Explicação:</g> O loop while continua executando  o bloco de código enquanto a condição “i < 10” for verdadeira, incrementando “i” a cada repetição.</p>
+                    </div>
+                </div>
+            <button onclick="window.location.href='https://github.com/mwlaofr/ListasDeExercicios/tree/main/Lista3'" class="lista1">Exercícios</button>
 
-         <h3 class="titulolo">Estrutura de Dados</h3>
-                <div class="tipos1">
-                    <div class="codigo">
-                        <h3>Vetores</h3>
-                        <p>Tipos que permitem o armazenamento de uma coleção de valores do mesmo tipo, ou seja, os vetores são estruturas de dados homogêneas (formados por elementos de mesmo tipo) e unidimensionais.</p>
-<pre><code class="language-javascript">
+            <h3 class="titulolo">Estrutura de Dados</h3>
+            <div class="tipos1">
+                <div class="codigo">
+                    <h3>Vetores</h3>
+                    <p>Tipos que permitem o armazenamento de uma coleção de valores do mesmo tipo, ou seja, os vetores são estruturas de dados homogêneas (formados por elementos de mesmo tipo) e unidimensionais.</p>
+                    <pre><code class="language-javascript">
     // Declarando um vetor de inteiros com 5 elementos
     int[] numeros = new int[5];
     
@@ -227,13 +223,14 @@
     numeros[4] = 50;
 
     // Acessando e exibindo o terceiro elemento do vetor
-System.out.println("O terceiro elemento é: " + numeros[2]);</code></pre>
-        </div>
+System.out.println("O terceiro elemento é: " + numeros[2]);
+                    </code></pre>
+                </div>
                                 
-<div class="codigo">
-    <h3>Matrizes</h3>
-    <p>Tipo de dado usado para representar uma certa quantidade de variáveis de valores homogêneos. Uma matriz é uma série de variáveis do mesmo tipo referenciadas por um único nome, onde cada variável é referenciada através de um índice entre colchetes. Armazena elementos em grade bidimensional ou superior.</p>
-    <pre><code class="language-javascript">
+                <div class="codigo">
+                    <h3>Matrizes</h3>
+                    <p>Tipo de dado usado para representar uma certa quantidade de variáveis de valores homogêneos. Uma matriz é uma série de variáveis do mesmo tipo referenciadas por um único nome, onde cada variável é referenciada através de um índice entre colchetes. Armazena elementos em grade bidimensional ou superior.</p>
+                    <pre><code class="language-javascript">
         int[][] matriz = {
             {1, 2, 3},
             {4, 5, 6},
@@ -242,18 +239,16 @@ System.out.println("O terceiro elemento é: " + numeros[2]);</code></pre>
         System.out.println(matriz[0][1]);
         // Imprime o elemento na primeira linha,
         // segunda coluna: 2
-            </code></pre>
+                    </code></pre>
+                </div>
             </div>
-         </div>
-        </div>
         
-        <h4 class="subtitulo">Funções</h4>
-        <div class="funcao">
-        <div class="texto"><p>Bloco de código que executa alguma operação. Opcionalmente, uma função pode definir parâmetros de entrada que permitem que os chamadores passem argumentos para a função. Uma função também pode retornar um valor como saída.</p>
-    </div>
-    <div class="codmeio">
-    <div class="codigoMeio">
-        <pre><code class="language-javascript">
+            <h4 class="subtitulo">Funções</h4>
+            <div class="funcao">
+                <div class="texto"><p>Bloco de código que executa alguma operação. Opcionalmente, uma função pode definir parâmetros de entrada que permitem que os chamadores passem argumentos para a função. Uma função também pode retornar um valor como saída.</p></div>
+            <div class="codmeio">
+                <div class="codigoMeio">
+                    <pre><code class="language-javascript">
             public static int soma(int a, int b) {
                 return a + b;
             }
@@ -265,19 +260,18 @@ System.out.println("O terceiro elemento é: " + numeros[2]);</code></pre>
                     </code></pre>
                 </div>
                 <p>Nesse exemplo, a função “soma” é uma forma de encapsular a lógica de somar dois números em um único bloco de código reutilizável. Primeiro recebe dois parâmetros do tipo inteiro (a e b) e, no corpo da função (return a + b), realiza a soma dos dois parâmetros e retorna o resultado.</p>
-                </div>
+            </div>
 
-                <h3 class="titulolo">Programação Orientada a Objeto</h3>
-        <div class="poo">
-        <div class="texto"><p>A Programação Orientada a Objetos (POO) é um paradigma que organiza o software em torno de "objetos" em vez de funções e lógica. Um objeto é uma instância de uma classe, que é uma estrutura que define as propriedades (atributos) e comportamentos (métodos) que o objeto pode ter.</p>
-    </div>
-    <h3 class="titulolo">Conceitos Trabalhados</h3>
-    <h3 class="subtitulo">1. Classes e Objetos</h3>
-    <p>Uma classe é uma forma de definir um tipo de dado em uma linguagem orientada a objeto. Ela é formada por dados e comportamentos. Para definir os dados são utilizados os atributos, e para definir o comportamento são utilizados métodos. Depois que uma classe é definida podem ser criados diferentes objetos que utilizam a classe.</p>
-    <p>Objeto é uma instância de uma classe. Cada objeto pode ter diferentes valores para os atributos definidos na classe.</p>
-    <div class="codmeio">
-    <div class="codigoMeio">
-        <pre><code class="language-javascript">
+            <h3 class="titulolo">Programação Orientada a Objeto</h3>
+            <div class="poo">
+                <div class="texto"><p>A Programação Orientada a Objetos (POO) é um paradigma que organiza o software em torno de "objetos" em vez de funções e lógica. Um objeto é uma instância de uma classe, que é uma estrutura que define as propriedades (atributos) e comportamentos (métodos) que o objeto pode ter.</p></div>
+        <h3 class="titulolo">Conceitos Trabalhados</h3>
+        <h3 class="subtitulo">1. Classes e Objetos</h3>
+        <p>Uma classe é uma forma de definir um tipo de dado em uma linguagem orientada a objeto. Ela é formada por dados e comportamentos. Para definir os dados são utilizados os atributos, e para definir o comportamento são utilizados métodos. Depois que uma classe é definida podem ser criados diferentes objetos que utilizam a classe.</p>
+        <p>Objeto é uma instância de uma classe. Cada objeto pode ter diferentes valores para os atributos definidos na classe.</p>
+            <div class="codmeio">
+                <div class="codigoMeio">
+                    <pre><code class="language-javascript">
     public class Pessoa {
         // Atributos da classe
         private String nome;
@@ -306,13 +300,13 @@ System.out.println("O terceiro elemento é: " + numeros[2]);</code></pre>
             
                     </code></pre>
                 </div>
-                </div>
+            </div>
 
-                <h3 class="subtitulo">2. Encapsulamento</h3>
-    <p>É o princípio de esconder os detalhes internos de um objeto e permitir o acesso apenas através de métodos públicos. Isso protege os dados e garante a integridade dos atributos.</p>
-    <div class="codmeio">
-    <div class="codigoMeio">
-        <pre><code class="language-javascript">
+            <h3 class="subtitulo">2. Encapsulamento</h3>
+            <p>É o princípio de esconder os detalhes internos de um objeto e permitir o acesso apenas através de métodos públicos. Isso protege os dados e garante a integridade dos atributos.</p>
+                <div class="codmeio">
+                    <div class="codigoMeio">
+                        <pre><code class="language-javascript">
         public class Pessoa {
             private String nome;
             private int idade;
@@ -335,17 +329,17 @@ System.out.println("O terceiro elemento é: " + numeros[2]);</code></pre>
                 this.idade = idade;
             }
         }      
-                    </code></pre>
-                </div>
-                <p><g>Atributos Privados:</g> nome e idade são privados, acessíveis apenas dentro da classe Pessoa.<br>
+                        </code></pre>
+                    </div>
+                    <p><g>Atributos Privados:</g> nome e idade são privados, acessíveis apenas dentro da classe Pessoa.<br>
                     Métodos Públicos: <a>getNome</a>( ), <a>setNome</a>( ), <a>getIdade</a>( ), <a>setIdade</a>( ) são usados para acessar e modificar os atributos privados.</p>
                 </div>
 
                 <h3 class="subtitulo">3. Herança</h3>
                 <p>É um princípio de orientação a objetos, que permite que classes compartilhem atributos e métodos, através de "heranças". Ela é usada na intenção de reaproveitar código ou comportamento generalizado ou especializar operações ou atributos.</p>
-                <div class="codmeio">
-                <div class="codigoMeio">
-                    <pre><code class="language-javascript">
+                    <div class="codmeio">
+                        <div class="codigoMeio">
+                            <pre><code class="language-javascript">
         // Superclasse
         class Animal {
             void emitirSom() {
@@ -373,14 +367,17 @@ System.out.println("O terceiro elemento é: " + numeros[2]);</code></pre>
                 meuCachorro.correr();    // Saída: O cachorro está correndo
             }
         }      
-                                </code></pre>
-                            </div>
-                            <p><g>Superclasse:</g> Animal tem um método <a>emitirSom</a>( ) que imprime uma mensagem genérica.<br>
-                                <g>Subclasse:</g> Cachorro herda de Animal e tem seu próprio método <a>correr</a>( ).<br>
-                                <g>Reutilização de Código:</g> No método main, criamos um objeto da classe Cachorro. Este objeto pode usar tanto o método herdado <a>emitirSom</a>( ) quanto o método específico <a>correr</a>( ) da subclasse.</p>
-                            </div>
+                            </code></pre>
+                        </div>
+                        <p><g>Superclasse:</g> Animal tem um método <a>emitirSom</a>( ) que imprime uma mensagem genérica.<br>
+                        <g>Subclasse:</g> Cachorro herda de Animal e tem seu próprio método <a>correr</a>( ).<br>
+                        <g>Reutilização de Código:</g> No método main, criamos um objeto da classe Cachorro. Este objeto pode usar tanto o método herdado <a>emitirSom</a>( ) quanto o método específico <a>correr</a>( ) da subclasse.</p>
+                    </div>
         </section>
-        
 
-        
     </main>
+    <footer>
+        <p>Millena França © 2024 • Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

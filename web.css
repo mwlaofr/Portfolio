@@ -87,9 +87,74 @@ li g {
     justify-content: center;
     display: flex;
     align-items: center;
-
 }
 iframe{
     border-radius: 10px;
     margin-bottom: 50px;
+}
+.codigocss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.codigocss img{
+    width: 45%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    margin-right: 30px;
+    transition: transform 0.3s ease;
+}
+.codigocss img.ex2{
+    width: 58%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    margin-right: 30px;
+    transition: transform 0.3s ease;
+}
+.codigocss img.ex3{
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    margin-right: 30px;
+    transition: transform 0.3s ease;
+}
+.codigocss img:hover{
+    transform: scale(1.05);
+}
+ul li{
+    margin-right: 30px;
+    text-align: justify;
+}
+#cor{
+    cursor: pointer;
+}
+.btn{
+    top: 0;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(108, 99, 255);
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.btn:hover{
+    background-color: rgb(59, 54, 158);
+}
+.cadsquad{
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
