@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Dados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bancodados.css">
+</head>
+<body>
+    <header>
+        <h1>Millena França</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#materias">Matérias</a></li>
+                    <li><a href="index.html#academico">Acadêmico</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="materia-conteudo">
+            <h2>Banco de Dados</h2>
+            <p>Na disciplina de Banco de Dados, exploramos a organização, gerenciamento e manipulação de dados utilizando sistemas de gerenciamento de banco de dados (SGBDs). Aprendemos sobre diferentes tipos de dados e suas estruturas, modelagem de dados através do Modelo Entidade-Relacionamento (ER), e a utilização do PostgreSQL para criar e gerenciar bancos de dados. A seguir, estão descritos os principais tópicos abordados.</p>
+            <h3>Tipos de Dados e Suas Estruturas</h3>
+            <ul>
+                <li>Dados Estruturados</li>
+                <p>Dados organizados em um formato fixo, como tabelas de bancos de dados relacionais, onde cada campo tem um tipo de dado definido. Exemplo: Tabelas de um banco de dados relacional com colunas de tipos como INT, VARCHAR, DATE, etc.</p>
+                
+                <li>Dados Não Estruturados</li>
+                <p>Dados que não têm um formato predefinido ou organizado. Podem incluir texto, imagens, vídeos, documentos, etc.<br>Exemplo: Arquivos de texto, e-mails, imagens, vídeos.</p>
+                
+                <li>Dados Semi-Estruturados</li>
+                <p>Dados que não são organizados em tabelas, mas possuem tags ou marcadores que identificam elementos distintos.<br>Exemplo: Documentos JSON, XML.</p>
+            </ul>
+            <div class="imagem">
+                <img src="dadosformatos.png" alt="dados" class="dados">
+            </div>
+
+            <h3>Modelo Entidade-Relacionamento (ER)</h3>
+            <p>Um modelo para descrever os dados e suas relações em um banco de dados de forma visual através de diagramas.</p>
+            <a>Componentes Principais</a>
+            <ul>
+                <li>Entidades: Representam objetos ou conceitos do mundo real com existência independente. Exemplo: `Cliente`, `Produto`.</li>
+                <li>Atributos: Características das entidades. Exemplo: `Cliente` pode ter `Nome`, `Endereço`, `Telefone`.</li>
+                <li>Relacionamentos: Definem como as entidades estão associadas entre si. Exemplo: `Cliente` realiza `Compra`.</li>
+            </ul>
+            <a>Exemplo de Diagrama ER</a>
+            <div class="diagramas">
+                <img src="diagrama1.png" alt="diagrama" class="diagrama1">
+            </div>
+            <h3>PostgreSQL: Criando e Gerenciando Bancos de Dados</h3>
+            <a>Comandos Básicos</a>
+            <div class="dropbox">
+                <p>Criar Tabela</p>
+                <div class="panel">
+                  <img src="sql1.png" alt="sql" class="sql">
+                </div>
+              
+                <p>Alterar Tabela</p>
+                <div class="panel">
+                  <img src="sql2.png" alt="sql" class="sql">
+                </div>
+              
+                <p>Inserir Dados</p>
+                <div class="panel">
+                  <img src="sql3.png" alt="sql" class="sql">
+                </div>
+              
+                <p>Selecionar Dados</p>
+                <div class="panel">
+                  <img src="sql4.png" alt="sql" class="sql">
+                </div>
+              
+                <p>Apagar Tabela</p>
+                <div class="panel">
+                  <img src="sql5.png" alt="sql" class="sql">
+                </div>
+            </div>
+
+            <h3>Exercícios</h3>
+            <a>1. Tabela Livro X Autor</a>
+            <div class="codigo">
+                <pre><code>
+                CREATE TABLE LIVRO (
+	ISBN int primary key, 
+	anopubli varchar(14) unique,
+	titulo text not null,
+	editora text
+	CONSTRAINT fk_autor FOREIGN KEY (IDautor) REFERENCES AUTOR (IDautor),
+	IDautor int,
+);
+
+CREATE TABLE AUTOR (
+	IDautor int primary key, 
+	nome text not null,
+	CONSTRAINT fk_ISBN FOREIGN KEY (ISBN) REFERENCES LIVRO (ISBN),
+	ISBN int,
+);
+
+
+INSERT INTO LIVRO (ISBN,anopubli,titulo,editora) VALUES
+('12345','2015','Viagem ao Passado','Editora Mundo'),
+('54321','2007','Cartas para outro eu','Editora Letras'),
+('15323','2013','Coleção - Poemas','Editora Tipologia'),
+('18390','2021','Datas Marcadas','Editora Rosa')
+('32895','2006','Letras'),
+
+INSERT INTO AUTOR (IDautor,nome) VALUES
+('32596','Paul Erick'),
+('01927','Pedro Oliveira'),
+('62854','Lucas Matias'),
+('59203','Lucas Matias'),
+
+
+--Listar livros escritos por um autor
+SELECT * FROM LIVRO
+WHERE nome = (SELECT nome FROM autor
+				 WHERE nome = 'Lucas Matias')
+                </code></pre>
+            </div>
+
+        </section>
+        
+    </main>
+    <footer>
+        <p>Millena França © 2024 • Todos os direitos reservados</p>
+    </footer>
+    <script src="banco.js" defer></script>
+</body>
+</html>

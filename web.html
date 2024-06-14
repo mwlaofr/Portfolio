@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="web.css">
+    <script src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <header>
+        <h1>Millena França</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#materias">Matérias</a></li>
+                    <li><a href="index.html#academico">Acadêmico</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="materia-conteudo">
+            <h2>Desenvolvimento Web</h2>
+            <p>Na disciplina de Desenvolvimento Web, exploramos a criação de páginas e aplicações web utilizando tecnologias como HTML, CSS e JavaScript. A seguir, estão descritos os principais conceitos abordados, com ênfase em HTML5 e o Modelo de Objetos do Documento (DOM).</p>
+            <h3>HTML5</h3>
+                <div class="html5">
+                    <p>HTML5 é a quinta e mais recente versão do HyperText Markup Language (HTML), a linguagem padrão para criar páginas web. Ele introduz novas funcionalidades que facilitam o desenvolvimento de websites modernos e interativos.</p>
+                <img src="html5.png" alt="html5" class="html5">
+                </div>
+            <a>Novas Tags Semânticas</a>
+            <ul>
+                <li><g>Header:</g> Define o cabeçalho de uma seção ou página.</li>
+                <li><g>Nav:</g> Define uma seção de navegação.</li>
+                <li><g>Section:</g> Define uma seção genérica em um documento.</li>
+                <li><g>Article:</g> Define um conteúdo independente.</li>
+                <li><g>Aside:</g> Define um conteúdo relacionado ao conteúdo principal.</li>
+                <li><g>Footer:</g> Define o rodapé de uma seção ou página.</li>
+            </ul>
+            <h3>Formulários Aprimorados</h3>
+            <p>HTML5 também traz melhorias significativas nos formulários:</p>
+            <ul>
+                <li>Novos tipos de input, como email, tel, url, number, date, etc.</li>
+                <li>Atributos como placeholder, required, pattern, entre outros, para validação e usabilidade.</li>
+            </ul>
+            <p>Exemplos:</p>
+            <div class="ex">
+                <div class="formularioEmail">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email">
+                    <button id="botaoEnviar" onclick="confirmacaoEmail()">Enviar</button>
+                </div>
+
+                <div class="escolheCor">
+                    <label for="cor">Escolha uma cor:</label>
+                    <input type="color" id="cor" name="cor">
+                </div>
+            </div>
+
+
+            <h3>DOM (Document Object Model)</h3>
+            <p>O Modelo de Objetos do Documento (DOM) é uma interface de programação para documentos HTML e XML. Ele representa a estrutura de um documento como uma árvore de nós, onde cada nó é um objeto representando uma parte do documento, como elementos, atributos e texto.</p>
+            <h3>Interação com o DOM usando JavaScript</h3>
+            <a>Acessar Elementos</a>
+            <ul>
+                <li><g>getElementById:</g> Seleciona um elemento pelo seu ID.</li>
+                <li><g>getElementsByClassName:</g> Seleciona elementos pela sua classe.</li>
+                <li><g>getElementsByTagName:</g> Seleciona elementos pelo nome da tag.</li>
+                <li><g>querySelector e querySelectorAll:</g> Seleciona elementos usando seletores CSS.</li>
+            </ul><br><br>
+            <a>Modificar Conteúdo</a>
+            <ul>
+                <li><g>innerHTML:</g> Altera o HTML interno de um elemento.</li>
+                <li><g>textContent:</g> Altera o texto interno de um elemento.</li>
+                <li><g>setAttribute:</g> Altera atributos de um elemento.
+                </li>
+            </ul>
+            
+            <h3>CSS (Cascading Style Sheets)</h3>
+            <p>CSS é chamado de linguagem Cascading Style Sheet e é usado para estilizar elementos escritos em uma linguagem de marcação como HTML. O CSS separa o conteúdo da representação visual do site. Decoração da página</p>
+            <a>Objetivos</a>
+            <ul>
+                <li>Estilizar e formatar elementos HTML para melhorar a apresentação visual e a usabilidade de um site.</li>
+                <li>Criar layouts responsivos que se adaptem a diferentes dispositivos e tamanhos de tela.</li>
+                <li>Melhorar a acessibilidade e a experiência do usuário através de técnicas de design.</li>
+            </ul>
+            <a>Conceitos Básicos</a>
+            <ul>
+                <li><g>Seletores CSS:</g> São padrões usados para selecionar os elementos HTML aos quais se aplicarão as regras de estilo.</li>
+                    <div class="codigocss">
+                    <img src="codcss.jpeg" alt="codcss" class="ex1">
+                    </div>  
+                <li><g>Propriedades CSS:</g> São os atributos que definem o estilo dos elementos selecionados, como cor, tamanho da fonte, margens, etc.</li>
+                    <div class="codigocss">
+                        <img src="csspropriedades.jpeg" alt="csspropriedades" class="ex2">
+                    </div> 
+                <li><g>Valores CSS:</g> São os valores específicos atribuídos às propriedades CSS para definir a aparência e o comportamento dos elementos.</li>
+                    <div class="codigocss">
+                        <img src="ex3.jpeg" alt="ex3" class="ex3">
+                    </div> 
+            </ul>
+
+            <h3>JavaScript</h3>
+            <p>O JavaScript surgiu como uma tecnologia do lado do navegador para tornar as aplicações Web mais dinâmicas. Ao usar JavaScript, os navegadores passaram a ser capazes de responder a interações do usuário e alterar o layout do conteúdo na página.</p>
+            <a>Síntese do funcionamento do JavaScript (lado do cliente)</a>
+            <ul>
+                <li>O navegador carrega uma página da Web quando você a acessa.</li>
+                <li>Durante o carregamento, o navegador converte a página e todos os seus elementos, como botões, rótulos e caixas de menu suspenso, em uma estrutura de dados chamada Modelo de Objeto de Documento (DOM).</li>
+                <li>O mecanismo JavaScript do navegador converte o código JavaScript em código de bytes. Esse código é um intermediário entre a sintaxe em JavaScript e a máquina.</li>
+                <li>Eventos diferentes, como o clique do mouse em um botão, acionam a execução do bloco de código associado em JavaScript. Em seguida, o mecanismo interpreta o código de bytes e faz alterações no DOM.</li>
+                <li>O navegador exibe o novo DOM.</li><br>
+            </ul>
+            <a>Síntese do funcionamento do JavaScript (lado do cliente)</a>
+            <p>O termo JavaScript do lado do servidor se refere ao uso da linguagem de codificação na lógica de back-end do servidor. Nesse caso, o mecanismo JavaScript está diretamente no servidor. Uma função de JavaScript do lado do servidor pode acessar o banco de dados, realizar diferentes operações lógicas e responder a diversos eventos acionados pelo sistema operacional do servidor. A principal vantagem da criação de script do lado do servidor é que você pode promover um alto nível de personalização na resposta do site com base em seus requisitos, seus direitos de acesso e nas solicitações de informação recebidas do site.</p>
+
+            <h3>Projetos</h3>
+            <a>Calculadora</a>
+            <p>Utilizamos HTML para estruturar a calculadora, CSS para estilização e JavaScript para implementar a lógica das operações matemáticas.</p>
+            <div class="calc">
+                <iframe src="calculadora\index.html" width="600" height="580" frameborder="0"></iframe><br><br></div>
+            <a>Conceitos de HTML Aplicados:</a>
+            <ul>
+                <li><g>Tags de cabeçalho (head):</g>  Incluem metadados como o charset e o título da página.</li>
+                <li><g>Tags de texto (input):</g> Usada para o display da calculadora.</li>
+                <li><g>Tags de formulário:</g> Como (input) e (button), permitem a entrada de dados do usuário.</li>
+                <li><g>Tags auxiliares:</g> (div) é utilizada para organizar o layout.</li>
+                <li><g>Manipulação da árvore DOM:</g> onclick nos botões para chamar funções JavaScript que manipulam o display da calculadora.</li>
+            </ul><br><br>
+            <div class="login">
+            <a>Tela de Login</a>
+            <p>Utilizamos HTML para estruturar a tela de login, CSS para estilização e JavaScript para validação e interatividade.</p>
+            <a href="aulaGabriel\index.html" width="600" target="_blank" class="btn">Ver Projeto de Tela de Login</a><br><br>
+            <a>Conceitos de JavaScript Aplicados</a>
+            <ul>
+                <li><g>Validação de Formulário:</g> Funções para verificar se os campos obrigatórios estão preenchidos corretamente antes da submissão.</li>
+                <li><g>Interatividade:</g> Manipulação do DOM para mostrar mensagens de erro ou sucesso conforme necessário.</li>
+            </ul>
+            </div>
+            <div class="squads">
+                <a>Cadastro de Squads</a>
+                <p>No projeto "Cadastro de Squads", criamos uma aplicação web que permite cadastrar e gerenciar squads de forma eficiente. Utilizamos HTML para estruturar a aplicação, CSS para estilização e JavaScript para a lógica de manipulação de dados e interatividade.</p>
+                <div class="cadsquad">
+                <iframe src="CadastroSquads\index.html" width="600" height="580" frameborder="0"></iframe></div>
+            </div>
+
+    
+    
+    </main>
+    <footer>
+        <p>Millena França © 2024 • Todos os direitos reservados</p>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+#materia-conteudo li{
+    margin-bottom: 4px;
+    font-size: 17px;
+    font-weight: 600;
+}
+#materia-conteudo p{
+    font-weight: 400;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    text-align: justify;
+    
+}
+.fonte{
+    font-size: 14px;
+    color: rgb(161, 161, 170);
+}
+.highlight{
+    color: rgb(108, 99, 255);
+    font-weight: 650;
+}  
+.arduino{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 35px;
+    height: auto;
+    max-width: 100%;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+.arduino:hover{
+    transform: scale(1.05);
+}
+.dolado{
+    max-width: 60%;
+    flex-grow: 1;   
+    text-align: justify;    
+}
+.ardContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+.semaforo{
+    margin-top: 10px;
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    
+
+}   
+.codigo {
+    height: 312px;
+    width: 500px;
+    overflow-y: scroll;
+    border-radius: 8px;
+    margin-right: 35px;
+  }
+  .codigo pre {
+    white-space: pre-wrap;
+    font-family: monospace;
+    text-align: left;
+    margin-left: 10px;
+  }
+  .proj{
+    display: flex; 
+    flex-direction: row; /* Organiza os elementos na horizontal */
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .proj h4{
+    margin-left: 15px;
+  }
+  .proj .codigo a{
+    color: rgb(108, 99, 255);
+  }
+  .proj .codigo::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  .proj .codigo::-webkit-scrollbar {
+    width:5px;
+  }
+  .proj .codigo::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(161, 161, 170);
+  }
+
+  .controleLed{
+    margin-top: 20px;
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    
+  }
+  .contador{
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);   
+  }
+  .ardEsp{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+.esp32{
+  width: 30%;
+  height: auto;
+  margin-right: 35px;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.esp32:hover{
+  transform: scale(1.05);
+}
+.espSistema{
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);   
+  margin-top: 20px;
+}

@@ -1,0 +1,299 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+body::-webkit-scrollbar {
+    width:8px;
+  }
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(161, 161, 170);
+  } /*personalizar scroll*/
+  
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('path-to-your-fonts/segoeui.woff2') format('woff2'),
+         url('path-to-your-fonts/segoeui.woff') format('woff');
+
+}
+
+header{
+    padding: 10px 20px;
+    top: 0;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 60px;
+}
+nav{
+    margin-left: auto;
+    margin-right: 20px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin-right: 20px;
+}
+nav ul li{
+    padding: 0 10px
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    
+}
+
+nav ul li a:hover {
+    color: rgb(108, 99, 255);
+}
+
+main{
+    margin-top: 70px;
+    padding: 20px   ;
+    margin-left: 60px;
+    margin-right: 15px;
+}
+main section {
+    margin-bottom: 40px;
+}
+main section h1{
+    margin-top: 100px;
+    font-size: 36px;
+    font-weight: 700;
+}
+main section h2{
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 60px;
+}
+main section h3{
+    margin-top: 80px;
+    font-size: 24px;
+    font-weight: 700;
+}
+main section p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+#home h2 {
+    margin-bottom: 10px;
+}
+
+.logoContato {
+    font-size: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+.logoContato:hover {
+    color: rgb(108, 99, 255);
+    transform: scale(1.1);
+}  
+.container {
+    position: relative;
+    width: 100%;
+    margin: 40px auto;
+    overflow: hidden;
+}
+.conteudo{
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 80%; /* ajuste o tamanho do container */
+    padding: 20px;
+    margin: 40px auto;
+    display: flex;
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+    overflow-y: hidden;
+}
+.card {
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+    background-color: #1a1a1a; /* Preto */
+    color: #fff; /* Texto Branco */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px;
+}
+.card:hover {
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra mais intensa ao passar o mouse */
+} 
+
+.card h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+  
+  .card p {
+    margin-top: 90px;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .image-container {
+    position: relative;
+  }
+  
+  .gear {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 50px;
+    z-index: 2;
+    bottom: -30px;
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+}
+
+  .left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.timelineEsquerda{
+    margin-left: 155px;
+}
+.timelineDireita{
+    margin-left: 625px;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #161616;
+}
+.balaoEsq:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: -10px;
+    margin-top: -110px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #131316;
+    border-radius: 50%;
+  }
+  .balaoDi:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -10px;
+    margin-top: -160px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #131316;
+    border-radius: 50%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+.balaoEsq{
+    width: 370px;
+    position: relative;
+    background-color: #131316;
+    border-radius: 5px;
+    box-shadow: rgb(39, 39, 42) 0px 3px 0px;
+    padding-bottom: 7px;
+    
+}
+.timeline h4 {
+    font-size: 20px;
+    padding-top: 15px;
+    padding-left: 17px;
+    margin-bottom: 1px;
+}
+.timeline span{
+    font-size: 14px;
+    color: rgb(161, 161, 170);
+    padding-left: 17px;
+}
+.timeline p{
+    font-size: 16px;
+    padding-left: 17px;
+}
+.balaoDi{
+    width: 370px;
+    position: relative;
+    background-color: #131316;
+    border-radius: 5px;
+    box-shadow: rgb(39, 39, 42) 0px 3px 0px;
+    padding-bottom: 7px;
+    
+}
+footer{
+    margin-top: 70px;
+    background-color: #000000;
+    text-align: center;
+
+}
+footer p{
+    color: #fff;
+    font-size: 14px;
+}
+
