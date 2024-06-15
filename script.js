@@ -76,7 +76,7 @@ function confirmacaoEmail(){
 
 document.getElementById('cor').addEventListener('input', function() {
     var corSelecionada = this.value;
-    console.log('Cor selecionada: ' + corSelecionada);
+    console.log('Cor selecionada: ' + corSelecionada); //mudar cor do botao
 });
 
 

@@ -54,7 +54,10 @@
                 <li>Resistores de 220 Ohms</li>
             </ul>
             <div class="proj">
-            <img src="semaforo.png" alt="semaforo" class="semaforo">
+                    <video id="semaforoVideo" controls class="semaforo"> <!--tag para inserir video-->
+                        <source src="videosemaforo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 <div class="codigo">
                     <h4>Código do Projeto Semáforo</h4>
                     <pre><a>O semáforo deve conter  as seguintes funções:<br>Iniciar no amarelo piscante, por 3x.<br>depois que iniciou, ele vai ficar em repetição.<br>fazendo a seguinte ordem:<br><br>Verde (5s)<br>Amarelo (3s)<br>Vermelho (5s)<br><br>//Declaração das variáveis</a><br>int vermelho = 3;<br>int amarelo = 4;<br>int verde = 5;<br>int tempo_intermitente = 1000;<br><br>void setup(){<br>    <a>//Determina que os pinos 3,4,5 serão saídas.</a><br>    pinMode(vermelho, OUTPUT);<br>    pinMode(amarelo, OUTPUT);<br>    pinMode(verde, OUTPUT);<br><br>    controlaCor(amarelo, 1000, false);<br>    controlaCor(amarelo, 1000, false);<br>    controlaCor(amarelo, 1000, false);<br><br>}<br><br>void loop(){<br>      <a>//Chamando a função para controlar as cores.</a><br><br>    controlaCor(verde, 5000, true);<br>    controlaCor(amarelo, 3000, true);<br>    controlaCor(vermelho, 5000, true);<br>}<br><br>int controlaCor (int cor, int tempo, bool noloop) {<br>    digitalWrite(cor, 1);<br>    delay(tempo);<br>    digitalWrite(cor, 0);<br>  <a>//se noloop for true, retorna 1 imediatamente</a><br><br>      if(noloop == false){<br>        delay(tempo);<br>        return 0;<br>            <a>//se noloop for falso, espera (tempo) para retornar</a><br>    }<br>    else{<br>        return 1;<br>    }<br>}<br></pre>
