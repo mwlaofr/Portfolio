@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciência de Dados</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="aut.css">
+    <link rel="stylesheet" href="cienc.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -21,3 +22,318 @@
         </nav>
     </header>
     <main>
+        <section id="materia-conteudo">
+            <h2>Ciência de Dados</h2>
+            <p>Ciência de Dados relaciona a programação com a matemática, como muito visto neste semestre, as estatísticas, trabalhando com grandes conjuntos de dados.
+                Toda programação foi feita em Python utilizando a ferramenta Colab.<br><i>Link para o site: https://colab.google</i></p>
+            <h3>Comandos Básicos</h3>
+            <ul>
+                <li><b>import pandas as pd:</b> permite ler e escrever dados de diversos formatos, além de possuir funções estatísticas e analíticas. Possibilita trabalhar com DataFrame;</li>
+                <li><b>import numpy as np:</b> fornece suporte e funções para arrays e matrizes multidimensionais;</li>
+                <li><b>import matplotlib.pyplot as plt:</b> utilizada para criar gráficos e visualizações;</li>
+                <li><b>df = pd.read_excel<i>("https://github.com/PinkWink/ML_tutorial/raw/master/dataset/titanic.xls"):</i></b> importar o DataFrame do Titanic, utilizado para estudos da matéria.</li>
+            </ul>
+            <h3>Amostragem</h3>
+            <a>Amostra Aleatória</a>
+            <p>Cada elemento da população tem a mesma possibilidade de serem escolhidos.</p>
+            <div class="codigo">
+                <pre><code class="language-python">
+#df.iloc[1,1] #Mostra a informação de uma célula, [linha, coluna]
+#df.iloc[1] #Mostra a informação de uma linha, [linha]
+#df.iloc[:,1] #Mostra a informação de uma coluna, [intervalo, coluna]
+#df.iloc[1:5,1] #Mostra a informação de uma linha até tal linha de uma coluna, [começoLinha:fimLinha, coluna]
+#df.iloc[1:5,1:3] #Mostra a informação de uma linha até tal linha de uma coluna até outra coluna, [começoLinha:fimLinha, começoColuna:fimColuna]
+#np.random.randint(0, 5, 10) #np.random.randint(init, final, size)
+#df.iloc[[1,3,5],[2,4,6]] Seleciona linhas e colunas específicas
+
+#Colete uma amostra aleatória de 10 linhas do df titanic
+df.iloc[np.random.randint(0, 1309, 10),:]
+amostra = df.sample(10) #Mesma coisa da linha anterior
+
+#Deixar o resultado em ordem decrescente, mudar o ascending=True deixa crescente
+amostra1 = df.iloc[10:50].sample(10).sort_index(ascending=False)
+                </code></pre>
+            </div>
+
+            <a>Amostra Sistemática</a>
+            <p>É realizada uma seleção aleatória do primeiro elemento da amostra e em seguidas os demais são escolhidos através de intervalos fixos ou sistemáticos.</p>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Função numpy arange → gera um array a partir de um intervalo
+#np.arange(init,final,step) 
+#step= de tanto em tanto exemplo: (0,100,5): 0, 5 , 10, 15, 20
+
+#array = np.arange(1,100,1)
+#array
+
+#Exercício: obtenha uma amostra sistemática do df com passo 31, print 10
+
+#Garante espaço suficiente para pegar amostras com um passo de 31 no DataFrame
+firstline = np.random.randint(0,1309-310,1) 
+firstline
+
+#Função para pegar 10 amostras com passo 31
+lines = np.arange(firstline,1309,31)[:10]
+lines
+
+#Mostrar as amostras coletadas
+amostra = df.iloc[lines]
+amostra
+                </code></pre>
+            </div>
+
+            <a>Amostra Estratificada</a>
+            <p>Separa os elementos em grupos homogêneos e em seguida é feita uma amostra aleatória em cada grupo.</p>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Separando por sexo
+
+#Filtrando por sexo masculino
+all_male = df.loc[df['sex']=='male']
+#Selecionar 8 amostras aleatórias
+sample_male = all_male.sample(8)
+sample_male
+
+#Filtrando por sexo feminino
+all_female = df.loc[df['sex']=='female']
+sample_female = all_female.sample(8)
+sample_female
+
+#Selecionar uma amostra aleatória de aproximadamente 1% dos registros do DataFrame
+
+#Filtrando por sexo masculino
+all_male = df.loc[df['sex']=='male']
+#Multiplica o número de linhas por 0.01 para calcular 1% do número de registros
+sample_male = all_male.sample(round(all_male.shape[0]*0.01)) #linha coluna
+sample_male
+
+
+#Filtrando por sexo feminino
+all_female = df.loc[df['sex']=='female']
+sample_female = all_female.sample(round(all_female.shape[0]*0.01))
+sample_female
+                </code></pre>
+            </div>
+            <h3>Tendências Centrais</h3>
+            <a>Moda</a>
+            <p>Representa o valor mais frequente de um conjunto de dados.</p>
+
+            <a>Modal</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Um único valor aparece com mais frequência do que os outros
+modal = pd.DataFrame([35, 37, 36, 34, 38, 35, 37, 37, 33, 36, 38, 37,35, 37, 34, 33, 37, 36, 35, 38, 36, 35, 36, 37, 38, 39, 37, 37, 36, 37, 33, 37, 35, 37, 39])
+modal.mode()
+#mode é um método do pandas que calcula a moda
+                </code></pre>
+            </div>
+
+            <a>Bimodal</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Dois valores que aparecem com a mesma frequência e mais frequentemente do que os outros
+bimodal = pd.DataFrame([35, 37, 36, 34, 38, 35, 37, 37, 33, 36, 38, 37,35, 37, 34, 33, 37, 36, 35, 38, 36, 35, 36, 37, 38, 39, 37, 37, 36, 37, 33, 37, 35, 37, 39])
+bimodal.mode()
+                </code></pre>
+            </div>
+
+            <a>Polimodal</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Mais de dois valores que aparecem com a mesma frequência e mais frequentemente do que os outros
+polimodal = pd.DataFrame([35, 37, 36, 34, 38, 35, 37, 37, 33, 36, 38, 37,35, 37, 34, 33, 37, 36, 35, 38, 36, 35, 36, 37, 38, 39, 37, 37, 36, 37, 33, 37, 35, 37, 39])
+polimodal.mode()
+                </code></pre>
+            </div>
+
+            <a>Amodal</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Todos os valores aparecem com a mesma frequência
+amodal = pd.DataFrame([1, 2, 3, 4, 5 ,6, 7, 8, 9, 10, 11, 12])
+amodal.mode().shape[0]
+if amodal.mode().shape[0] == amodal.shape[0]:
+  print('amodal')
+elif amodal.mode().shape[0] == 1:
+  print('modal')
+elif amodal.mode().shape[0] == 2:
+  print('bimodal')
+else:
+  print('polimodal')
+                </code></pre>
+            </div>
+
+            <a>DataFrame Titanic</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Apresentar a moda das colunas: pclass, survived, name, sex, age;
+
+#x = df.iloc[df['name'] == 'Kelly, Mr. James']
+#x
+df[['pclass','survived','name', 'sex','age']].mode()
+df.mode()
+                </code></pre>
+            </div>
+
+            <h3>Mediana</h3>
+            <p>Representa o valor central de um conjunto de dados.</p>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Número impar de elementos
+#Utilizamos o método median para calcular a mediana
+medianaImpar = pd.DataFrame([1.63, 1.65, 1.72, 1.75, 1.79, 1.80, 1.82])
+medianaImpar.median()
+
+#Número par de elementos
+medianaPar = pd.DataFrame([1.63, 1.65, 1.72, 1.75, 1.79, 1.80])
+medianaPar.median()
+                </code></pre>
+            </div>
+
+            <a>Valores Ausentes</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#O método median() ignora os valores NaN
+mediana = pd.DataFrame([1.63, 1.65, 1.72, 1.75, np.NaN, 1.79, np.NaN, 1.80, 1.82])
+mediana.median()
+
+#Incluindo os valores NaN, desabilitando a opção de pular
+mediana.median(skipna=False)
+
+#Outra opção é substituir os valores NaN, neste caso substituimos por 0
+mediana.fillna(0).median()
+                </code></pre>
+            </div>
+
+            <a>DataFrame Titanic</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Calcular a mediana do DataFrame
+
+#Preenchendo os valores vazios por 0 e considerando apenas números
+df.fillna(0).median(numeric_only=True)
+                </code></pre>
+            </div>
+
+            <h3>Media</h3>
+            <p>Calculada somando-se todos os valores de um conjunto de dados e dividindo-se pelo número de elementos deste conjunto.</p>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Utilizamos o método man para calcular a média
+
+#skipna - pular espaços vazios;  numericonly - apenas numeros
+df.mean(numeric_only=True, skipna=False)
+
+#fillna - preencher os dados vazios com 0
+df.fillna(0).mean(numericonly=True)
+                </code></pre>
+            </div>
+
+            <div class="codigo">
+                <pre><code class="language-python">
+#Percentil
+
+#Utilizamos o método quantile para calcular o percentil
+percentil = pd.DataFrame([21,23,31,46,54,64,78,89,97,99,105])
+percentil.quantile(0.4)#Pegando 40%
+percentil.quantile(0.45)#Pegando 45%, ele calcula o valor
+
+#A mesma coisa num mesmo comando
+percentil.quantile([0.40,0.45])
+
+#Quantil
+
+#Utiliza três valores, que se dividem em 4 (25%, 50% e 75%)
+percentil.quantile([0.25, 0.5, 0.75])
+#Utilizamos o método describe para obter uma visão geral das estatísticas do DataFrame
+percentil.describe()
+
+#Apresenta a visão geral e o valor conforme o percentual
+percentil.describe(percentiles=[.1, .25, .3, .5, .75])
+                </code></pre>
+            </div>
+
+            <a>DataFrame Titanic</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Exiba o percentil 30% e todos os quartils para cada coluna do DataFrame Titanic
+df.quantile([0.25, 0.3, .5, .75], numeric_only=True)
+# Utilizando o método describe(), exiba contagem média, desvio padrão, valor mínimo,
+#valor máximo, percentil 10%, 30% e todos os quartils para cada coluna do DataFrame Titanic
+df.describe(percentiles=[.1, .25, .3, .5, .75])
+                </code></pre>
+            </div>
+
+            <h3>Medidas de Dispersão</h3>
+            <a>Amplitude</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Diferença entre a maior e a menor observação de um conjunto de dados
+amplitude = pd.DataFrame([4, 6, 79, 1, 64, 4, 33, 4, 9, 6, 4])
+#Os métodos pegam o maior e o menor valor do DataFrame
+A = amplitude.max()-amplitude.min()
+print(A)
+                </code></pre>
+            </div>
+
+            <h3>Exercício</h3>
+            <p>O setor de controle de qualidade de uma empresa seleciona ao acaso peças de um lote. Quando a amplitude das medidas dos diâmetros das peças ultrapassa 0,8 cm o lote é rejeitado. Considerando que em um lote foram encontrados os seguintes valores 2,1 cm; 2,0 cm; 2,2 cm; 2,9 cm; 2,4 cm, esse lote foi aprovado ou rejeitado?</p>
+            <div class="codigo">
+                <pre><code class="language-python">
+lote = pd.DataFrame([2.1, 2.0, 2.2, 2.9, 2.4])
+#Ele armazena o resultado em um array precisando converter
+if(a > 0.8):
+a = float (lote.max()-lote.min()) 
+    print("Rejeitado",a)
+
+else:
+    print("Aprovado",a)
+    
+    
+#Forma Alternativa (mais atual)
+lote = pd.DataFrame([2.1, 2.0, 2.2, 2.9, 2.4])
+a = (lote.max()-lote.min())
+#Compara com os valores calculados do array
+if(a[0] > 0.8): 
+    print("Rejeitado",a)
+
+else:
+    print("Aprovado",a)
+                </code></pre>
+            </div>
+
+            <a>DataFrame Titanic</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Aplique o cálculo de amplitude para cada coluna numérica do DataFrame Titanic
+for column in df.columns:
+#Pega dados de tipo inteiro e float, para só calcular colunas que há números
+  if df[column].dtype == 'int64' or df[column].dtype == 'float64':
+    A = df[column].max() - df[column].min();
+    #Printa o nome da coluna e a sua amplitude
+    print(column, '=', A)
+                </code></pre>
+            </div>
+
+            <a>Variância</a>
+            <div class="codigo">
+                <pre><code class="language-python">
+#Média dos quadrados das diferenças entre cada uma das observações e a média aritmética da amostra.
+
+#Utilizamos o método var para calcular a variância
+predios = pd.DataFrame([460, 800, 300, 400])
+predios.var()
+                </code></pre>
+            </div>
+            
+
+        </section>
+    </main>
+    <footer>
+        <p>Millena França © 2024 • Todos os direitos reservados</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

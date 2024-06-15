@@ -41,6 +41,10 @@ a{
     width: 65%;
     height: auto;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.dados:hover{
+  transform: scale(1.05);
 }
 .diagramas{
     display: flex;
