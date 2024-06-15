@@ -78,3 +78,5 @@ document.getElementById('cor').addEventListener('input', function() {
     var corSelecionada = this.value;
     console.log('Cor selecionada: ' + corSelecionada);
 });
+
+

@@ -6,6 +6,7 @@
     <title>Banco de Dados</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bancodados.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -26,14 +27,13 @@
             <p>Na disciplina de Banco de Dados, exploramos a organização, gerenciamento e manipulação de dados utilizando sistemas de gerenciamento de banco de dados (SGBDs). Aprendemos sobre diferentes tipos de dados e suas estruturas, modelagem de dados através do Modelo Entidade-Relacionamento (ER), e a utilização do PostgreSQL para criar e gerenciar bancos de dados. A seguir, estão descritos os principais tópicos abordados.</p>
             <h3>Tipos de Dados e Suas Estruturas</h3>
             <ul>
-                <li>Dados Estruturados</li>
-<<<<<<< HEAD
+                <li><g>Dados Estruturados</g></li>
                 <p>Dados organizados em um formato fixo, como tabelas de bancos de dados relacionais, onde cada campo tem um tipo de dado definido. Exemplo: Tabelas de um banco de dados relacional com colunas de tipos como INT, VARCHAR, DATE, etc.</p>
                 
-                <li>Dados Não Estruturados</li>
+                <li><g>Dados Não Estruturados</g></li>
                 <p>Dados que não têm um formato predefinido ou organizado. Podem incluir texto, imagens, vídeos, documentos, etc.<br>Exemplo: Arquivos de texto, e-mails, imagens, vídeos.</p>
                 
-                <li>Dados Semi-Estruturados</li>
+                <li><g>Dados Semi-Estruturados</g></li>
                 <p>Dados que não são organizados em tabelas, mas possuem tags ou marcadores que identificam elementos distintos.<br>Exemplo: Documentos JSON, XML.</p>
             </ul>
             <div class="imagem">
@@ -44,9 +44,9 @@
             <p>Um modelo para descrever os dados e suas relações em um banco de dados de forma visual através de diagramas.</p>
             <a>Componentes Principais</a>
             <ul>
-                <li>Entidades: Representam objetos ou conceitos do mundo real com existência independente. Exemplo: `Cliente`, `Produto`.</li>
-                <li>Atributos: Características das entidades. Exemplo: `Cliente` pode ter `Nome`, `Endereço`, `Telefone`.</li>
-                <li>Relacionamentos: Definem como as entidades estão associadas entre si. Exemplo: `Cliente` realiza `Compra`.</li>
+                <li><g>Entidades:</g> Representam objetos ou conceitos do mundo real com existência independente. Exemplo: `Cliente`, `Produto`.</li>
+                <li><g>Atributos:</g> Características das entidades. Exemplo: `Cliente` pode ter `Nome`, `Endereço`, `Telefone`.</li>
+                <li><g>Relacionamentos:</g> Definem como as entidades estão associadas entre si. Exemplo: `Cliente` realiza `Compra`.</li>
             </ul>
             <a>Exemplo de Diagrama ER</a>
             <div class="diagramas">
@@ -84,8 +84,8 @@
             <h3>Exercícios</h3>
             <a>1. Tabela Livro X Autor</a>
             <div class="codigo">
-                <pre><code>
-                CREATE TABLE LIVRO (
+                <pre><code class="language-sql">
+CREATE TABLE LIVRO (
 	ISBN int primary key, 
 	anopubli varchar(14) unique,
 	titulo text not null,
@@ -123,25 +123,402 @@ WHERE nome = (SELECT nome FROM autor
                 </code></pre>
             </div>
 
+            <a>2. Tabela Projeto X Funcionário</a>
+            <div class="codigo">
+                <pre><code class="language-sql">
+CREATE TABLE projeto (
+	IDprojeto SERIAL PRIMARY KEY UNIQUE NOT NULL,
+	nomeProjeto TEXT NOT NULL,
+	descricao TEXT
+);
+
+CREATE TABLE funcionario (
+	IDfuncionario SERIAL PRIMARY KEY NOT NULL UNIQUE,
+	nomeFuncionario TEXT NOT NULL,
+	dataEmissao DATE NOT NULL
+);
+
+CREATE TABLE reuniao (
+	IDreuniao SERIAL PRIMARY KEY NOT NULL UNIQUE,
+	CONSTRAINT fk_IDprojeto FOREIGN KEY (IDprojeto) REFERENCES projeto (IDprojeto),
+	IDprojeto SERIAL,
+	CONSTRAINT fk_IDfuncionario FOREIGN KEY (IDfuncionario) REFERENCES funcionario (IDfuncionario),
+	IDfuncionario SERIAL,	
+	pautaReuniao TEXT NOT NULL,
+	horarioReuniao TIME NOT NULL
+);
+
+INSERT INTO projeto (nomeProjeto, descricao) VALUES
+('Sistema de Gerenciamento de Finanças Pessoais', 'Aplicativo para controle de despesas e receitas'),
+('Plataforma de Aprendizado Online', 'Website para cursos e tutoriais em vídeo'),
+('Rede Social para Profissionais', 'Conectando pessoas com interesses profissionais similares'),
+('Sistema de Reservas de Hotéis', 'Facilitando a reserva de acomodações em hotéis'),
+('Aplicativo de Fitness', 'Acompanhamento de exercícios e planejamento de treinos'),
+('Plataforma de Entregas Rápidas', 'Entrega de alimentos e produtos de lojas locais'),
+('Marketplace de Artesanato', 'Compra e venda de produtos feitos à mão'),
+('Aplicativo de Receitas Culinárias', 'Descubra e compartilhe suas receitas favoritas'),
+('Sistema de Gestão de Projetos', 'Acompanhe e gerencie todas as etapas de seus projetos'),
+('Plataforma de Música Online', 'Streaming de música com recomendações personalizadas');
+
+INSERT INTO funcionario (nomeFuncionario, dataEmissao) VALUES
+('João Silva', '1990-05-15'),
+('Maria Santos', '1985-08-20'),
+('Pedro Oliveira', '1993-12-10'),
+('Ana Souza', '1987-04-25'),
+('Lucas Pereira', '1998-10-03'),
+('Carla Almeida', '1995-06-08'),
+('Mariana Costa', '1992-02-17'),
+('Marcos Lima', '1989-11-30'),
+('Laura Fernandes', '1991-07-22'),
+('Paulo Santos', '1986-03-05');
+
+INSERT INTO reuniao (pautaReuniao, horarioReuniao) VALUES
+('Planejamento Semanal', '09:00'),
+('Discussão de Novas Funcionalidades', '14:30'),
+('Avaliação de Resultados', '11:00'),
+('Revisão de Orçamento', '15:00'),
+('Definição de Metas Trimestrais', '10:30'),
+('Brainstorming de Ideias', '13:00'),
+('Análise de Desempenho', '10:00'),
+('Treinamento de Novos Processos', '16:00'),
+('Feedback de Equipe', '14:00'),
+('Planejamento Estratégico Anual', '11:30');
+
+SELECT * FROM reuniao
+
+                </code></pre>
+            </div>
+
+            <a>3. Tabela Paciente X Médico</a>
+            <div class="codigo">
+                <pre><code class="language-sql">
+CREATE TABLE paciente (
+	IDpaciente SERIAL PRIMARY KEY NOT NULL UNIQUE,
+	nomePac TEXT NOT NULL,
+	dataNasc DATE NOT NULL
+);
+
+CREATE TABLE medico (
+	IDmedico SERIAL PRIMARY KEY NOT NULL UNIQUE,
+	nomeMed	TEXT NOT NULL,
+	especializacao TEXT NOT NULL
+);
+
+CREATE TABLE registroMedico(
+	CONSTRAINT fk_IDpaciente FOREIGN KEY (IDpaciente) REFERENCES paciente(IDpaciente),
+	IDpaciente SERIAL,
+	CONSTRAINT fk_IDmedico FOREIGN KEY (IDmedico) REFERENCES medico(IDmedico),
+	IDmedico INT	
+);
+
+INSERT INTO paciente (nomePac, dataNasc) VALUES
+('gabi', '1992/11/25'),
+('triz_pariz', '2006/01/25'),
+('cellbit', '1997/12/20'),
+('alanzoka', '1995/12/15'),
+('calango', '1991/07/05'),
+('bruninhozor', '1993/09/08'),
+('nyvi', '1991/06/27'),
+('loud_thurzin', '1999/10/11'),
+('jovirone', '1991/09/28'),
+('yoDa', '1992/10/10');
+
+INSERT INTO medico (nomeMed, especializacao) VALUES
+('Dr. Meredith Grey', 'Cirurgia Geral'),
+('Dr. Gregory House', 'Diagnóstico Diferencial'),
+('Dr. Derek Shepherd', 'Neurocirurgia'),
+('Dr. Miranda Bailey', 'Cirurgia Geral'),
+('Dr. Mindy Lahiri', 'Ginecologia e Obstetrícia'),
+('Dr. Arizona Robbins', 'Cirurgia Pediátrica'),
+('Dr. Cristina Yang', 'Cirurgia Cardíaca'),
+('Dr. Alex Karev', 'Cirurgia Pediátrica'),
+('Dr. Sheldon Cooper', 'Física Teórica'),
+('Dr. Leonard Hofstadter', 'Física Experimental');
+
+INSERT INTO registroMedico (IDmedico) VALUES
+(1),
+(2),
+(3),
+(4),
+(5),
+(6),
+(7),
+(8),
+(9),
+(10)
+SELECT * FROM registroMedico
+
+                </code></pre>
+            </div>
+
+            <a>4. Tabela Funcionário X Gerente</a>
+            <div class="codigo">
+                <pre><code class="language-sql">
+CREATE TABLE funcionario (
+	IDfuncionario SERIAL PRIMARY KEY NOT NULL UNIQUE,
+	CONSTRAINT fk_IDgerente FOREIGN KEY (IDgerente) REFERENCES gerente(IDgerente) ,
+	IDgerente SERIAL,
+	nomeFuncionario TEXT NOT NULL,
+	dataAdmissao DATE NOT NULL,
+	cargo TEXT NOT NULL
+);
+
+CREATE TABLE gerente(
+	IDgerente INT PRIMARY KEY NOT NULL UNIQUE
+);
+
+CREATE TABLE departamento(
+	IDdepartamento SERIAL PRIMARY KEY NOT NULL UNIQUE,
+	nomeDp TEXT NOT NULL,
+	CONSTRAINT fk_IDgerente FOREIGN KEY (IDgerente) REFERENCES gerente(IDgerente), 
+	IDgerente SERIAL,
+	centroCusto SERIAL
+);
+
+INSERT INTO funcionario (nomeFuncionario,dataAdmissao,cargo) VALUES
+('Eleven', '2016/11/06', 'Telecinética'),
+('Mike Wheeler', '2016/11/06', 'Líder do Grupo'),
+('Will Byers', '2016/11/06', 'Amigo Leal'),
+('Jim Hopper', '2016/11/06', 'Chefe de Polícia'),
+('Joyce Byers', '2016/11/06', 'Mãe Determinada'),
+('Dustin Henderson', '2016/11/06', 'Mestre em Comunicação'),
+('Lucas Sinclair', '2016/11/06', 'Estrategista'),
+('Nancy Wheeler', '2016/11/06', 'Investigadora'),
+('Jonathan Byers', '2016/11/06', 'Fotógrafo'),
+('Steve Harrington', '2016/11/06', 'Babá de Criaturas');
+
+INSERT INTO gerente VALUES
+('1'),
+('2'),
+('3'),
+('4'),
+('5'),
+('6'),
+('7'),
+('8'),
+('9'),
+('10');
+
+INSERT INTO departamento (nomeDp) VALUES
+('Recursos Humanos'),
+('Finanças'),
+('Marketing'),
+('TI'),
+('Operações'),
+('Vendas'),
+('Desenvolvimento'),
+('Logística'),
+('Jurídico'),
+('Produção');
+
+SELECT * FROM gerente
+SELECT * FROM departamento
+SELECT * FROM funcionario
+                </code></pre>
+            </div>
+
+            <h3>Normalização</h3>
+            <p>Processo de organizar os dados em um banco de dados para reduzir a redundância e melhorar a integridade dos dados.</p>
+            <a>Formas Normais:</a>
+            <ul>
+                <li><g>Primeira Forma Normal (1NF):</g> Não há colunas com valores repetidos ou grupos de repetição.</li>
+                <li><g>Segunda Forma Normal (2NF):</g> Remove dependências parciais.</li>
+                <li><g>Terceira Forma Normal (3NF)</g> Não possui dependências transitivas (nenhum atributo não-chave depende de outro atributo não-chave).</li>
+            </ul>
+            <h3>Projeto Aluno X Matrícula X Curso</h3>
+            <p>Diagrama</p>
+            <div class="diagramas">
+                <img src="diagramaproj.jpg" alt="diagrama" class="diagrama1">
+            </div>
+
+            <h3>Codigo SQL em partes:</h3>
+            <code>
+                -- Alunos <-> Matrículas --<br>
+Relacionamento de Um-para-Muitos (1:N)<br>
+Um Aluno pode ter várias Matrículas em diferentes Cursos.<br>
+Chave Estrangeira: CPF em Matrículas referenciando CPF em Alunos.<br><br>
+
+-- Cursos <-> Matrículas --<br>
+Relacionamento de Um-para-Muitos (1:N)<br>
+Um Curso pode ter várias Matrículas de Alunos.<br>
+Chave Estrangeira: ID_Curso em Matrículas referenciando ID_Curso em Cursos.<br><br>
+
+-- Cursos <-> Disciplinas --<br>
+Relacionamento de Muitos-para-Muitos (N:M)<br>
+Um Curso pode ter várias Disciplinas, e uma Disciplina pode pertencer a vários Cursos.<br>
+Tabela de Associação: curso_disc com chaves estrangeiras ID_Curso e ID_Disciplina.<br><br>
+
+            </code>
+            <a>Criação da tabela</a>
+            <div class="codigo">
+                <pre><code class="language-sql">
+                    -- Tabela Alunos --
+CREATE TABLE alunos(
+	cpf varchar(14) PRIMARY KEY NOT NULL UNIQUE,
+	nome_aluno varchar(50) NOT NULL,
+	idade int,
+	endereco text NOT NULL,
+	contato text NOT NULL
+)
+
+-- Tabela Disciplinas --
+CREATE TABLE disciplinas(
+	id_disciplina serial PRIMARY KEY NOT NULL UNIQUE,
+	nome_disciplina text NOT NULL,
+	optativa boolean
+)
+
+-- Tabela Curso --
+CREATE TABLE cursos(
+	id_curso serial PRIMARY KEY NOT NULL UNIQUE,
+	nome_curso text NOT NULL
+)
+
+-- Tabela Departamentos --
+CREATE TABLE departamentos(
+	id_departamento serial PRIMARY KEY NOT NULL UNIQUE,
+	nome_departamento text NOT NULL
+)
+
+-- Tabela Matriculas --
+CREATE TABLE matriculas(
+	ra serial PRIMARY KEY,
+	cpf varchar(14) REFERENCES alunos,
+	status varchar(10),
+	id_cursos int REFERENCES curso
+)
+
+-- Tabela cursos_disciplinas --
+CREATE TABLE curso_disc(
+	id_curso int REFERENCES cursos,
+	id_disc int REFERENCES disciplinas
+)
+                </code></pre>
+            </div>
+
+            <a>Inserindo Dados</a>
+            <div class="codigo">
+                <pre><code class="language-sql">
+                    -- Dados Alunos --
+INSERT INTO alunos (cpf,nome_aluno,idade,endereco, contato) VALUES
+('12345678900', 'João Silva', 25, 'Rua das Flores, 123', '(11) 1234-5678'),
+('98765432100', 'Maria Oliveira', 20, 'Avenida dos Anjos, 456', '(22) 9876-5432'),
+('45678912300', 'Pedro Santos', 22, 'Travessa das Estrelas, 789', '(33) 4567-8901'),
+('32165498700', 'Ana Pereira', 19, 'Rua das Palmeiras, 987', '(44) 3210-9876'),
+('78912345600', 'Luiza Costa', 21, 'Alameda das Águias, 654', '(55) 7890-1234')
+
+-- Dados Disciplinas --
+INSERT INTO disciplinas (nome_disc, optativa) VALUES
+('Cálculo', true),
+('Culinária Básica', false),
+('Carpintaria', false),
+('Desenho Orientado', true),
+('Algoritmos', true)
+
+-- Dados Cursos --
+INSERT INTO curso (nome_curso) VALUES
+('Engenharia da Computação'),
+('Gastronomia'),
+('Engenharia Civil'),
+('Artes Técnicas'),
+('Ciências da Computação')
+
+-- Dados Departamentos --
+INSERT INTO departamento (nome_departamento) VALUES
+('Engenharia'),
+('Saúde'),
+('Engenharia'),
+('Humanas'),
+('Tecnologia')
+
+-- Dados Matriculas --
+INSERT INTO matriculas (cpf,status,id_cursos) VALUES
+('12345678900','Cursando', 1),
+('98765432100','Trancado', 2),
+('45678912300','Concluído', 3),
+('32165498700','Cursando', 4),
+('78912345600','Cursando', 5)
+                </code></pre>
+            </div>
+
+            <a>Aplicando Fltros</a>
+            <div class="codigo">
+                <pre><code class="language-sql">
+--/Dado o RA ou o Nome do Aluno, buscar no BD todos os demais dados do aluno\--
+SELECT * FROM alunos NATURAL INNER JOIN matriculas
+WHERE nome_aluno = 'Maria' OR ra = (SELECT ra FROM matriculas
+				 WHERE ra = '7')	
+
+--/Dado o nome de um departamento, exibir o nome de todos os cursos associados a ele\--
+SELECT nome_curso
+FROM cursos NATURAL INNER JOIN departamentos
+WHERE area = 'Engenharia'
+
+--/Dado o nome de uma disciplina, exibir a qual ou quais cursos ela pertence\--
+SELECT c.nome_curso
+FROM cursos c 
+NATURAL INNER JOIN curso_disc cd 
+INNER JOIN disciplinas d ON cd.id_disc = d.id_disc 
+WHERE d.nome_disc = 'Cálculo';
+
+--/Dado o CPF de um aluno, exibir quais disciplinas ele está cursando\--
+SELECT d.nome_disc
+FROM matriculas m
+INNER JOIN curso_disc cd ON m.id_curso = cd.id_curso
+INNER JOIN disciplinas d ON cd.id_disc = d.id_disc
+WHERE m.cpf = '98765432100';
+
+-- Filtrar todos os alunos matriculados em um determinado curso. --
+SELECT a.nome_aluno
+FROM alunos a
+INNER JOIN matriculas m ON a.cpf = m.cpf
+WHERE m.id_curso = (SELECT id_curso FROM cursos 
+					WHERE nome_curso = 'Engenharia da Computação');
+
+-- Filtrar todos os alunos matriculados em determinada disciplina. --
+SELECT a.nome_aluno
+FROM alunos a
+INNER JOIN matriculas m ON a.cpf = m.cpf
+INNER JOIN curso_disc cd ON m.id_curso = cd.id_curso
+INNER JOIN disciplinas d ON cd.id_disc = d.id_disc
+WHERE d.nome_disc = 'Carpintaria';
+
+-- Filtrar alunos formados. --
+SELECT nome_aluno
+FROM alunos
+INNER JOIN matriculas ON alunos.cpf = matriculas.cpf
+WHERE matriculas.status = 'Concluído';
+
+-- Filtrar alunos ativos --
+SELECT nome_aluno
+FROM alunos
+INNER JOIN matriculas ON alunos.cpf = matriculas.cpf
+WHERE matriculas.status = 'Cursando';
+
+-- Apresentar a quantidade de alunos ativos por curso. --
+SELECT c.nome_curso, COUNT(*) AS quantidade_alunos_ativos
+FROM cursos c
+INNER JOIN matriculas m ON c.id_curso = m.id_curso
+WHERE m.status = 'Cursando'
+GROUP BY c.nome_curso;
+
+-- Apresentar a quantidade de alunos ativos por disciplina. --
+SELECT d.nome_disc, COUNT(*) AS quantidade_alunos_ativos
+FROM disciplinas d
+INNER JOIN curso_disc cd ON d.id_disc = cd.id_disc
+INNER JOIN matriculas m ON cd.id_curso = m.id_curso
+WHERE m.status = 'Cursando'
+GROUP BY d.nome_disc;
+                </code></pre>
+            </div>
         </section>
         
     </main>
     <footer>
         <p>Millena França © 2024 • Todos os direitos reservados</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="banco.js" defer></script>
 </body>
 </html>
-=======
-                <p>Dados organizados em um formato fixo, como tabelas de bancos de dados relacionais, onde cada campo tem um tipo de dado definido.</p>
-                
-                <li>Dados Não Estruturados</li>
-                <p>Dados que não têm um formato predefinido ou organizado. Podem incluir texto, imagens, vídeos, documentos, etc.</p>
-                
-                <li>Dados Semi-Estruturados</li>
-                <p>Dados que não são organizados em tabelas, mas possuem tags ou marcadores que identificam elementos distintos.</p>
-            </ul>
-
-        </section>
-    </main>
->>>>>>> fe500cfc1beebf8c5067972df7a17ae8e96facdc

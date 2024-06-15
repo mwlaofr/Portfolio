@@ -77,22 +77,22 @@ button{
     flex-direction: column;
 }
 
-.codigoMeioScroll {
+.codigoMeioScroll pre{
     height: 500px;
     width: 900px;
     overflow-y: scroll;
     border-radius: 8px;
     margin-right: 35px;
   }
-  .codmeio .codigoMeioScroll::-webkit-scrollbar-thumb {
+.codigoMeioScroll pre::-webkit-scrollbar-thumb {
     background-color: #ffffff;
     border-radius: 5px;
   }
-  .codmeio .codigoMeioScroll::-webkit-scrollbar {
+  .codigoMeioScroll pre::-webkit-scrollbar {
     width: 5px; /* Largura da barra de rolagem */
     height: 5px; /* Altura da barra de rolagem */
   }
-  .codmeio .codigoMeioScroll::-webkit-scrollbar-thumb:hover {
+  .codigoMeioScroll pre::-webkit-scrollbar-thumb:hover {
     background-color: rgb(161, 161, 170);
   }
 

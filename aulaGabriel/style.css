@@ -27,6 +27,8 @@
     cursor: pointer;
     border-width: 2px;
     border-style: solid;
+    margin-left: 20px
+    
 
 }
 
@@ -46,6 +48,7 @@
     cursor: pointer;
     border-width: 2px;
     border-style: solid;
+    margin-left: 20px;
 
 }
 .Senha:focus{
@@ -62,7 +65,7 @@
     border-radius: 10px;
     box-shadow: 0 0 5px 5px white;
     cursor: pointer;
-
+    margin-left: 10px;
 }
 
 .Enviar:hover{
